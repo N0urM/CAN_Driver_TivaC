@@ -1,0 +1,351 @@
+Dependencies for Project 'CAN_Driver', Target 'Target 1': (DO NOT MODIFY !)
+F (.\can_driver.c)(0x5D9E3333)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\can_driver.o --omf_browse .\objects\can_driver.crf --depend .\objects\can_driver.d)
+I (can_driver.h)(0x5D9E32EA)
+I (common.h)(0x5D9E331E)
+F (.\main.c)(0x5D9E3313)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h)(0x550FE22C)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm4.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h)(0x51B6E406)
+I (can_driver.h)(0x5D9E32EA)
+I (common.h)(0x5D9E331E)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Lib\ARM\arm_cortexM4lf_math.lib)(0x5C8BB458)()
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ActivationFunctions\arm_nn_activations_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_activations_q15.o --omf_browse .\objects\arm_nn_activations_q15.crf --depend .\objects\arm_nn_activations_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ActivationFunctions\arm_nn_activations_q7.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_activations_q7.o --omf_browse .\objects\arm_nn_activations_q7.crf --depend .\objects\arm_nn_activations_q7.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ActivationFunctions\arm_relu_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_relu_q15.o --omf_browse .\objects\arm_relu_q15.crf --depend .\objects\arm_relu_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ActivationFunctions\arm_relu_q7.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_relu_q7.o --omf_browse .\objects\arm_relu_q7.crf --depend .\objects\arm_relu_q7.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_1x1_HWC_q7_fast_nonsquare.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_1x1_hwc_q7_fast_nonsquare.o --omf_browse .\objects\arm_convolve_1x1_hwc_q7_fast_nonsquare.crf --depend .\objects\arm_convolve_1x1_hwc_q7_fast_nonsquare.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q15_basic.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q15_basic.o --omf_browse .\objects\arm_convolve_hwc_q15_basic.crf --depend .\objects\arm_convolve_hwc_q15_basic.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q15_fast.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q15_fast.o --omf_browse .\objects\arm_convolve_hwc_q15_fast.crf --depend .\objects\arm_convolve_hwc_q15_fast.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q7_RGB.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q7_rgb.o --omf_browse .\objects\arm_convolve_hwc_q7_rgb.crf --depend .\objects\arm_convolve_hwc_q7_rgb.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q7_basic.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q7_basic.o --omf_browse .\objects\arm_convolve_hwc_q7_basic.crf --depend .\objects\arm_convolve_hwc_q7_basic.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q7_basic_nonsquare.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q7_basic_nonsquare.o --omf_browse .\objects\arm_convolve_hwc_q7_basic_nonsquare.crf --depend .\objects\arm_convolve_hwc_q7_basic_nonsquare.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q7_fast.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q7_fast.o --omf_browse .\objects\arm_convolve_hwc_q7_fast.crf --depend .\objects\arm_convolve_hwc_q7_fast.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_convolve_HWC_q7_fast_nonsquare.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_convolve_hwc_q7_fast_nonsquare.o --omf_browse .\objects\arm_convolve_hwc_q7_fast_nonsquare.crf --depend .\objects\arm_convolve_hwc_q7_fast_nonsquare.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_depthwise_separable_conv_HWC_q7.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_depthwise_separable_conv_hwc_q7.o --omf_browse .\objects\arm_depthwise_separable_conv_hwc_q7.crf --depend .\objects\arm_depthwise_separable_conv_hwc_q7.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_depthwise_separable_conv_HWC_q7_nonsquare.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_depthwise_separable_conv_hwc_q7_nonsquare.o --omf_browse .\objects\arm_depthwise_separable_conv_hwc_q7_nonsquare.crf --depend .\objects\arm_depthwise_separable_conv_hwc_q7_nonsquare.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_nn_mat_mult_kernel_q7_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_mat_mult_kernel_q7_q15.o --omf_browse .\objects\arm_nn_mat_mult_kernel_q7_q15.crf --depend .\objects\arm_nn_mat_mult_kernel_q7_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ConvolutionFunctions\arm_nn_mat_mult_kernel_q7_q15_reordered.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_mat_mult_kernel_q7_q15_reordered.o --omf_browse .\objects\arm_nn_mat_mult_kernel_q7_q15_reordered.crf --depend .\objects\arm_nn_mat_mult_kernel_q7_q15_reordered.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\FullyConnectedFunctions\arm_fully_connected_mat_q7_vec_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_fully_connected_mat_q7_vec_q15.o --omf_browse .\objects\arm_fully_connected_mat_q7_vec_q15.crf --depend .\objects\arm_fully_connected_mat_q7_vec_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\FullyConnectedFunctions\arm_fully_connected_mat_q7_vec_q15_opt.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_fully_connected_mat_q7_vec_q15_opt.o --omf_browse .\objects\arm_fully_connected_mat_q7_vec_q15_opt.crf --depend .\objects\arm_fully_connected_mat_q7_vec_q15_opt.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\FullyConnectedFunctions\arm_fully_connected_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_fully_connected_q15.o --omf_browse .\objects\arm_fully_connected_q15.crf --depend .\objects\arm_fully_connected_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\FullyConnectedFunctions\arm_fully_connected_q15_opt.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_fully_connected_q15_opt.o --omf_browse .\objects\arm_fully_connected_q15_opt.crf --depend .\objects\arm_fully_connected_q15_opt.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\FullyConnectedFunctions\arm_fully_connected_q7.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_fully_connected_q7.o --omf_browse .\objects\arm_fully_connected_q7.crf --depend .\objects\arm_fully_connected_q7.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\FullyConnectedFunctions\arm_fully_connected_q7_opt.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_fully_connected_q7_opt.o --omf_browse .\objects\arm_fully_connected_q7_opt.crf --depend .\objects\arm_fully_connected_q7_opt.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\NNSupportFunctions\arm_nn_mult_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_mult_q15.o --omf_browse .\objects\arm_nn_mult_q15.crf --depend .\objects\arm_nn_mult_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\NNSupportFunctions\arm_nn_mult_q7.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_mult_q7.o --omf_browse .\objects\arm_nn_mult_q7.crf --depend .\objects\arm_nn_mult_q7.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\NNSupportFunctions\arm_nntables.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nntables.o --omf_browse .\objects\arm_nntables.crf --depend .\objects\arm_nntables.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\NNSupportFunctions\arm_q7_to_q15_no_shift.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_q7_to_q15_no_shift.o --omf_browse .\objects\arm_q7_to_q15_no_shift.crf --depend .\objects\arm_q7_to_q15_no_shift.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\NNSupportFunctions\arm_q7_to_q15_reordered_no_shift.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_q7_to_q15_reordered_no_shift.o --omf_browse .\objects\arm_q7_to_q15_reordered_no_shift.crf --depend .\objects\arm_q7_to_q15_reordered_no_shift.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\PoolingFunctions\arm_pool_q7_HWC.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_pool_q7_hwc.o --omf_browse .\objects\arm_pool_q7_hwc.crf --depend .\objects\arm_pool_q7_hwc.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\SoftmaxFunctions\arm_softmax_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_softmax_q15.o --omf_browse .\objects\arm_softmax_q15.crf --depend .\objects\arm_softmax_q15.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\SoftmaxFunctions\arm_softmax_q7.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_softmax_q7.o --omf_browse .\objects\arm_softmax_q7.crf --depend .\objects\arm_softmax_q7.d)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nnsupportfunctions.h)(0x5C8A78DC)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_common_tables.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include\arm_nn_tables.h)(0x5C8A78DC)
+F (RTE\Device\TM4C123GH6PM\startup_TM4C123.s)(0x51B6E406)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\listings\startup_tm4c123.lst --xref -o .\objects\startup_tm4c123.o --depend .\objects\startup_tm4c123.d)
+F (RTE\Device\TM4C123GH6PM\system_TM4C123.c)(0x550A65DA)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\system_tm4c123.o --omf_browse .\objects\system_tm4c123.crf --depend .\objects\system_tm4c123.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123.h)(0x530EF2F6)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\TM4C123GH6PM.h)(0x550FE22C)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm4.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h)(0x5B9768A4)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h)(0x5C8FA234)
+I (C:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\system_TM4C123.h)(0x51B6E406)

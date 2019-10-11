@@ -1,11 +1,3 @@
-/*
- * common.h
- *
- * Created: 8/23/2019 1:29:45 PM
- *  Author: ebrah
- */ 
-
-
 #ifndef COMMON_H_
 #define COMMON_H_
 
@@ -30,16 +22,20 @@ typedef unsigned long long uint64_t;
 
 //#define WRITE_REG_8BIT(REG,Val)      (ACCESS_REG_8BIT(REG))=(Val);
 
-#define SET_BIT(REG,BIT_NUM)		 (REG |= 1<<(BIT_NUM))
 
-#define CLEAR_BIT(REG,BIT_NUM)       (REG &= (~(1<<(BIT_NUM))))
+#define	    READ_REG(REG)				(*(volatile uint32_t*) REG)
 
-#define BIT_IS_SET(REG,BIT_NUM)      (REG & (1 << BIT_NUM))
+#define		WRITE_REG(REG, VAL)			 ((*(volatile uint32_t*) REG) = VAL)
 
-#define BIT_IS_CLEAR(REG,BIT_NUM)    (!(BIT_IS_SET(REG,BIT_NUM)))
+#define     SET_BIT(REG,BIT_NUM)		 ((*(volatile uint32_t*) REG) |= 1<<(BIT_NUM))
 
-#define TOGGLE_BIT(REG,BIT_NUM)  	 (REG = REG ^ (1<<BIT_NUM) )
+#define     CLEAR_BIT(REG,BIT_NUM)       ((*(volatile uint32_t*) REG) &= (~(1<<(BIT_NUM))))
 
+#define     BIT_IS_SET(REG,BIT_NUM)      ((*(volatile uint32_t*) REG) & (1 << BIT_NUM))
+
+#define     BIT_IS_CLEAR(REG,BIT_NUM)    (!(BIT_IS_SET(REG,BIT_NUM)))
+
+#define     TOGGLE_BIT(REG,BIT_NUM)  	 ((*(volatile uint32_t*) REG) = (*(volatile uint32_t*) REG) ^ (1<<BIT_NUM) )
 
 
 

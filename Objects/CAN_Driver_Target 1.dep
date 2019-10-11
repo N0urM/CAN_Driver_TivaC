@@ -1,11 +1,14 @@
 Dependencies for Project 'CAN_Driver', Target 'Target 1': (DO NOT MODIFY !)
-F (.\can_driver.c)(0x5D9E3333)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\can_driver.o --omf_browse .\objects\can_driver.crf --depend .\objects\can_driver.d)
-I (can_driver.h)(0x5DA0B2D6)
-I (common.h)(0x5DA0B2D6)
-F (.\main.c)(0x5DA0B2D6)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\can_driver.c)(0x5DA0F5B3)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\can_driver.o --omf_browse .\objects\can_driver.crf --depend .\objects\can_driver.d)
+I (can_driver.h)(0x5DA0ED4D)
+I (CAN_HW_TYPES.h)(0x5DA0EBA0)
+I (common.h)(0x5DA0E6A9)
 I (tm4c123gh6pm.h)(0x53886E7A)
-I (can_driver.h)(0x5DA0B2D6)
-I (common.h)(0x5DA0B2D6)
+F (.\main.c)(0x5DA0E646)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (can_driver.h)(0x5DA0ED4D)
+I (CAN_HW_TYPES.h)(0x5DA0EBA0)
+I (common.h)(0x5DA0E6A9)
+I (tm4c123gh6pm.h)(0x53886E7A)
 F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Lib\ARM\arm_cortexM4lf_math.lib)(0x5C8BB458)()
 F (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Source\ActivationFunctions\arm_nn_activations_q15.c)(0x5C8A78DC)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\arm_nn_activations_q15.o --omf_browse .\objects\arm_nn_activations_q15.crf --depend .\objects\arm_nn_activations_q15.d)
 I (C:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include\arm_math.h)(0x5C8FA234)

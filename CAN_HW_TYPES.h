@@ -1,9 +1,10 @@
 #ifndef CAN_HW_TYPES_
 #define CAN_HW_TYPES_
 
-#define 	CAN0_BASE				0x40040000
-#define 	CAN1_BASE				0x40041000
-
+typedef enum{
+    CAN0_BASE = 0x40040000,
+    CAN1_BASE =	0x40041000
+}CAN_Base;
 
 #define 	CAN_CTL_R			    0x00
 #define		CAN_STS_R			    0x004

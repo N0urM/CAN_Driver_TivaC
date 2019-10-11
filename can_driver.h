@@ -7,7 +7,6 @@
 #define CAN_INT_ERROR  = CAN_CTL_EIE
 #define CAN_INT_MASTER = CAN_CTL_IE
 #define CAN_INT_STATUS = CAN_CTL_SIE
-#define CAN_INT_INTID_STATUS = 0x8000
 #define CAN_STATUS_BUS_OFF
 #define CAN_STATUS_EPASS
 #define CAN_STATUS_EWARN
@@ -41,7 +40,8 @@
 
 
 typedef enum {
-	something
+	CAN_INT_STS_CAUSE,
+	CAN_INT_STS_OBJECT
 }tCANIntStsReg;
 
 typedef enum  {
@@ -79,20 +79,14 @@ void CANEnable (uint32_t ui32Base);
 bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t pui32TxCount);
 void CANInit (uint32_t ui32Base);
 
-void CANIntClear (uint32_t ui32Base, uint32_t ui32IntClr);
-void CANIntDisable (uint32_t ui32Base, uint32_t ui32IntFlags);
-void CANIntEnable (uint32_t ui32Base, uint32_t ui32IntFlags);
-void CANIntRegister (uint32_t ui32Base, void (pfnHandler)(void));
-uint32_t CANIntStatus (uint32_t ui32Base, tCANIntStsReg eIntStsReg);
-void CANIntUnregister (uint32_t ui32Base);
-<<<<<<< HEAD
-
-void CANMessageClear (uint32_t ui32Base, uint32_t ui32ObjID);
-=======
-void CANMessageClear (uint32_t Base, uint32_t ui32ObjID);
->>>>>>> 93e253d90fe9e833dc7ead0adf7379dfbb3ef555
+void CANIntClear (CAN_Base ui32Base, uint32_t ui32IntClr);
+void CANIntDisable (CAN_Base ui32Base, uint32_t ui32IntFlags);
+void CANIntEnable (CAN_Base ui32Base, uint32_t ui32IntFlags);
+void CANIntRegister (CAN_Base ui32Base, void (pfnHandler)(void));
+uint32_t CANIntStatus (CAN_Base ui32Base, tCANIntStsReg eIntStsReg);
+void CANIntUnregister (CAN_Base ui32Base);
 void CANMessageGet (uint32_t ui32Base, uint32_t ui32ObjID, tCANMsgObject psMsgObject, bool_t bClrPendingInt);
-void CANMessageSet (uint32_t Base, uint32_t ObjID, tCANMsgObject *MsgObject, tMsgObjType MsgType);
+void CANMessageSet (CAN_Base Base, uint32_t ObjID, tCANMsgObject *MsgObject, tMsgObjType MsgType);
 bool_t CANRetryGet (uint32_t ui32Base);
 void CANRetrySet (uint32_t ui32Base, bool_t bAutoRetry);
 uint32_t CANStatusGet (uint32_t ui32Base, tCANStsReg eStatusReg);

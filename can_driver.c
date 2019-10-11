@@ -1,62 +1,37 @@
 #include "can_driver.h"
 
-void CANIntEnable (uint32_t ui32Base, uint32_t ui32IntFlags){
-    if(ui32Base == CAN0_CTL_R)
-     {   
-        CAN0_CTL_R |= ui32IntFlags;
+void CANIntEnable (CAN_Base Base, uint32_t ui32IntFlags){
 
-     }
-    else if (ui32Base == CAN1_CTL_R) {
-        CAN1_CTL_R |= ui32IntFlags;
-    }
-    else {
-        // Error wrong base
-    }
+    SET_BIT((Base+ CAN_CTL_R) , ui32IntFlags);
+
+}
+
+void CANIntDisable (CAN_Base Base, uint32_t ui32IntFlags){
+
+    CLEAR_BIT( (Base + CAN_CTL_R) , ui32IntFlags);
     
 }
 
-void CANIntDisable (uint32_t Base, uint32_t ui32IntFlags){
-    uint32 CAN_Base;
-    if(Base == 0)
-     {   
-        CAN_Base = CAN0_BASE;
+void CANIntClear (CAN_Base Base, uint32_t ui32IntClr){
 
-     }
-    else if (ui32Base == CAN1_CTL_R) {
-        CAN_Base = CAN1_BASE;
-    }
-    else {
-        // Error wrong base
-    }
-    CAN1_CTL_R &= (~ui32IntFlags);
+    CLEAR_BIT ( (Base+CAN_INT_R) , ui32IntClr); 
 }
 
-void CANIntClear (uint32_t ui32Base, uint32_t ui32IntClr){
-    if(ui32Base == CAN0_CTL_R)
-     {   
-        CAN0_INT_R &= ~ui32IntClr;
-     }
-    else if (ui32Base == CAN1_CTL_R) {
-        CAN1_INT_R &= ~ui32IntClr;
+uint32_t CANIntStatus (CAN_Base Base, tCANIntStsReg eIntStsReg){
+    uint32_t return_val;
+    if (eIntStsReg == CAN_INT_STS_CAUSE){
+        return_val = READ_REG( (Base + CAN_INT_R) );
+    }else {
+        return_val =  READ_REG (Base+CAN_MSG1INT_R) & 0x00ff;  // not sure if it's 0x00ff or 0xff00 masking INTPND bits
+        return_val |= (READ_REG(Base+CAN_MSG2INT_R) <<16 );
     }
-    else {
-        // Error wrong base
-    }
-}
-
-uint32_t CANIntStatus (uint32_t ui32Base, tCANIntStsReg eIntStsReg){
-
-    
+    return return_val;
 }
 
 
 
-void CANMessageSet (uint32_t Base, uint32_t ObjID, tCANMsgObject *MsgObject, tMsgObjType MsgType){
-		
-	if((Base != CAN0_BASE) && (Base != CAN1_BASE)){
-		return;
-	}
+void CANMessageSet (CAN_Base Base, uint32_t ObjID, tCANMsgObject *MsgObject, tMsgObjType MsgType){
 	
-	
+	SET_BIT((Base+CAN_IF1MCTL_R), CAN_IF1MCTL_UMASK);
 	
 }

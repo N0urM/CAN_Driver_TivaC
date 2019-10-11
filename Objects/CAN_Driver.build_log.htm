@@ -27,10 +27,10 @@ Project File Date:  10/09/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-assembling startup_TM4C123.s...
-RTE\Device\TM4C123GH6PM\startup_TM4C123.s(1015): warning: A1581W: Added 2 bytes of padding at address 0x11a
 compiling can_driver.c...
-compiling main.c...
+CAN_HW_TYPES.h(54): warning:  #1-D: last line of file ends without a newline
+  #endif
+can_driver.c: 1 warning, 0 errors
 linking...
 Program Size: Code=728 RO-data=636 RW-data=0 ZI-data=608  
 ".\Objects\CAN_Driver.axf" - 0 Error(s), 1 Warning(s).
@@ -103,7 +103,7 @@ Package Vendor: Keil
       Source file:   Device\Source\ARM\startup_TM4C123.s
       Include file:  Device\Include\TM4C123\TM4C123.h
       Source file:   Device\Source\system_TM4C123.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -1,5 +1,6 @@
 #include "common.h"
 #include "CAN_HW_TYPES.h"
+#include "tm4c123gh6pm.h"
 
 /*Const definitions*/
 

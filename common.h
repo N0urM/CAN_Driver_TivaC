@@ -16,7 +16,7 @@ typedef unsigned int  uint16;
 typedef  int  sint16;
 typedef char int8;
 typedef uint8 bool_t;
-typedef unsigned long uint32;
+typedef unsigned long uint32_t;
 typedef unsigned long long uint64;
 
 

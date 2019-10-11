@@ -58,22 +58,22 @@ typedef enum {
 
 /* Prototypes*/
 
-uint32 CANBitRateSet (uint32 ui32Base, uint32 ui32SourceClock, uint32 ui32BitRate);
-void CANBitTimingGet (uint32 ui32Base, tCANBitClkParms psClkParms);
-void CANBitTimingSet (uint32 ui32Base, tCANBitClkParms psClkParms);
-void CANDisable (uint32 ui32Base);
-void CANEnable (uint32 ui32Base);
-bool_t CANErrCntrGet (uint32 ui32Base, uint32 pui32RxCount, uint32 pui32TxCount);
-void CANInit (uint32 ui32Base);
-void CANIntClear (uint32 ui32Base, uint32 ui32IntClr);
-void CANIntDisable (uint32 ui32Base, uint32 ui32IntFlags);
-void CANIntEnable (uint32 ui32Base, uint32 ui32IntFlags);
-void CANIntRegister (uint32 ui32Base, void (pfnHandler)(void));
-uint32 CANIntStatus (uint32 ui32Base, tCANIntStsReg eIntStsReg);
-void CANIntUnregister (uint32 ui32Base);
-void CANMessageClear (uint32 ui32Base, uint32 ui32ObjID);
-void CANMessageGet (uint32 ui32Base, uint32 ui32ObjID, tCANMsgObject psMsgObject, bool_t bClrPendingInt);
-void CANMessageSet (uint32 ui32Base, uint32 ui32ObjID, tCANMsgObject psMsgObject, tMsgObjType eMsgType);
-bool_t CANRetryGet (uint32 ui32Base);
-void CANRetrySet (uint32 ui32Base, bool_t bAutoRetry);
-uint32 CANStatusGet (uint32 ui32Base, tCANStsReg eStatusReg);
+uint32_t CANBitRateSet (uint32_t ui32Base, uint32_t ui32SourceClock, uint32_t ui32BitRate);
+void CANBitTimingGet (uint32_t ui32Base, tCANBitClkParms psClkParms);
+void CANBitTimingSet (uint32_t ui32Base, tCANBitClkParms psClkParms);
+void CANDisable (uint32_t ui32Base);
+void CANEnable (uint32_t ui32Base);
+bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t pui32TxCount);
+void CANInit (uint32_t ui32Base);
+void CANIntClear (uint32_t ui32Base, uint32_t ui32IntClr);
+void CANIntDisable (uint32_t ui32Base, uint32_t ui32IntFlags);
+void CANIntEnable (uint32_t ui32Base, uint32_t ui32IntFlags);
+void CANIntRegister (uint32_t ui32Base, void (pfnHandler)(void));
+uint32_t CANIntStatus (uint32_t ui32Base, tCANIntStsReg eIntStsReg);
+void CANIntUnregister (uint32_t ui32Base);
+void CANMessageClear (uint32_t ui32Base, uint32_t ui32ObjID);
+void CANMessageGet (uint32_t ui32Base, uint32_t ui32ObjID, tCANMsgObject psMsgObject, bool_t bClrPendingInt);
+void CANMessageSet (uint32_t ui32Base, uint32_t ui32ObjID, tCANMsgObject psMsgObject, tMsgObjType eMsgType);
+bool_t CANRetryGet (uint32_t ui32Base);
+void CANRetrySet (uint32_t ui32Base, bool_t bAutoRetry);
+uint32_t CANStatusGet (uint32_t ui32Base, tCANStsReg eStatusReg);

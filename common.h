@@ -66,20 +66,21 @@ typedef unsigned long long uint64_t;
 
 //#define WRITE_REG_8BIT(REG,Val)      (ACCESS_REG_8BIT(REG))=(Val);
 
+#define ACCESS_REG(REG)								(*(volatile uint32_t*)(REG))
 
-#define		READ_REG(REG)				(*(volatile uint32_t*) REG)
+#define	READ_REG(REG)									(*(volatile uint32_t*) (REG))
 
-#define		WRITE_REG(REG, VAL)			 ((*(volatile uint32_t*) REG) = VAL)
+#define	WRITE_REG(REG, VAL)			 			((*(volatile uint32_t*) (REG)) = VAL)
 
-#define SET_BIT(REG,BIT_OFFSET)		 ((*(volatile uint32_t*) REG) |= (BIT_OFFSET))
+#define SET_BIT(REG,BIT_OFFSET)		 		((*(volatile uint32_t*) (REG)) |= (BIT_OFFSET))
 
-#define CLEAR_BIT(REG,BIT_OFFSET)       ((*(volatile uint32_t*) REG) &= (~(BIT_OFFSET)))
+#define CLEAR_BIT(REG,BIT_OFFSET)     ((*(volatile uint32_t*) (REG)) &= (~(BIT_OFFSET)))
 
-#define BIT_IS_SET(REG,BIT_OFFSET)      ((*(volatile uint32_t*) REG) & (BIT_OFFSET))
+#define BIT_IS_SET(REG,BIT_OFFSET)    ((*(volatile uint32_t*) (REG)) & (BIT_OFFSET))
 
-#define BIT_IS_CLEAR(REG,BIT_OFFSET)    (!(BIT_IS_SET(REG,BIT_OFFSET)))
+#define BIT_IS_CLEAR(REG,BIT_OFFSET)  (!(BIT_IS_SET((REG),BIT_OFFSET)))
 
-#define TOGGLE_BIT(REG,BIT_OFFSET)  	 ((*(volatile uint32_t*) REG) = (*(volatile uint32_t*) REG) ^ (BIT_OFFSET))
+#define TOGGLE_BIT(REG,BIT_OFFSET)    ((*(volatile uint32_t*) (REG)) = (*(volatile uint32_t*) (REG)) ^ (BIT_OFFSET))
 
 
 

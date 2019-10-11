@@ -4,36 +4,38 @@
 
 /*Const definitions*/
 
+#define CAN_MAX_STANDARD_ID		0x7FF
+#define	CAN_MAX_EXTENDED_ID		0x1FFFFFFF
 
-#define CAN_INT_ERROR
-#define CAN_INT_MASTER
-#define CAN_INT_STATUS
-#define CAN_STATUS_BUS_OFF
-#define CAN_STATUS_EPASS
-#define CAN_STATUS_EWARN
-#define CAN_STATUS_LEC_ACK
-#define CAN_STATUS_LEC_BIT0
-#define CAN_STATUS_LEC_BIT1
-#define CAN_STATUS_LEC_CRC
-#define CAN_STATUS_LEC_FORM
-#define CAN_STATUS_LEC_MASK
-#define CAN_STATUS_LEC_MSK
-#define CAN_STATUS_LEC_NONE
-#define CAN_STATUS_LEC_STUFF
-#define CAN_STATUS_RXOK
-#define CAN_STATUS_TXOK
-#define MSG_OBJ_DATA_LOST
-#define MSG_OBJ_EXTENDED_ID
-#define MSG_OBJ_FIFO
-#define MSG_OBJ_NEW_DATA
-#define MSG_OBJ_NO_FLAGS
-#define MSG_OBJ_REMOTE_FRAME
-#define MSG_OBJ_RX_INT_ENABLE
-#define MSG_OBJ_STATUS_MASK
-#define MSG_OBJ_TX_INT_ENABLE
-#define MSG_OBJ_USE_DIR_FILTER
-#define MSG_OBJ_USE_EXT_FILTER
-#define MSG_OBJ_USE_ID_FILTER
+#define CAN_INT_ERROR						1
+#define CAN_INT_MASTER					2
+#define CAN_INT_STATUS					3
+#define CAN_STATUS_BUS_OFF			4
+#define CAN_STATUS_EPASS				5
+#define CAN_STATUS_EWARN				6
+#define CAN_STATUS_LEC_ACK			7
+#define CAN_STATUS_LEC_BIT0			8
+#define CAN_STATUS_LEC_BIT1			9
+#define CAN_STATUS_LEC_CRC			10
+#define CAN_STATUS_LEC_FORM			11
+#define CAN_STATUS_LEC_MASK			12
+#define CAN_STATUS_LEC_MSK			13
+#define CAN_STATUS_LEC_NONE			14
+#define CAN_STATUS_LEC_STUFF		15
+#define CAN_STATUS_RXOK					16
+#define CAN_STATUS_TXOK					17
+#define MSG_OBJ_DATA_LOST				18
+#define MSG_OBJ_EXTENDED_ID			19
+#define MSG_OBJ_FIFO						20
+#define MSG_OBJ_NEW_DATA				21
+#define MSG_OBJ_NO_FLAGS				22
+#define MSG_OBJ_REMOTE_FRAME		23
+#define MSG_OBJ_RX_INT_ENABLE		24
+#define MSG_OBJ_STATUS_MASK			25
+#define MSG_OBJ_TX_INT_ENABLE		26
+#define MSG_OBJ_USE_DIR_FILTER	27
+#define MSG_OBJ_USE_EXT_FILTER	28
+#define MSG_OBJ_USE_ID_FILTER		29
 
 /*
     Enumerations to contrust on demand:
@@ -68,6 +70,11 @@ typedef struct {
 	uint8_t *Msg_Data;
 	
 }tCANMsgObject;
+
+typedef enum {
+	STANDARD_FRAME = 0,
+	EXTENDED_FRAME = 1
+}tCANFRAME_TYPE;
 
 /* Prototypes*/
 

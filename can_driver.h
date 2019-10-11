@@ -1,6 +1,8 @@
 #include "common.h"
+#include "CAN_HW_TYPES.h"
 
 /*Const definitions*/
+
 
 #define CAN_INT_ERROR
 #define CAN_INT_MASTER
@@ -36,6 +38,7 @@
     Enumerations to contrust on demand:
 */
 
+
 typedef enum {
 	something
 }tCANIntStsReg;
@@ -45,15 +48,24 @@ typedef enum  {
 }tCANStsReg;
 
 typedef enum {
-	onemore
+	
+	CAN_MSG_OBJ_TYPE_TX = 0,
+	CAN_MSG_OBJ_TYPE_RX = 1
+	
 }tMsgObjType;
         
-typedef enum {
-	again
+typedef struct {
+	//again
 }tCANBitClkParms;
 
-typedef enum {
-	ok
+typedef struct {
+	
+	uint32_t Msg_ID;
+	uint32_t Msg_ID_MSK;
+	uint32_t Flags;
+	uint32_t Msg_Length;
+	uint8_t *Msg_Data;
+	
 }tCANMsgObject;
 
 /* Prototypes*/
@@ -71,9 +83,10 @@ void CANIntEnable (uint32_t ui32Base, uint32_t ui32IntFlags);
 void CANIntRegister (uint32_t ui32Base, void (pfnHandler)(void));
 uint32_t CANIntStatus (uint32_t ui32Base, tCANIntStsReg eIntStsReg);
 void CANIntUnregister (uint32_t ui32Base);
-void CANMessageClear (uint32_t ui32Base, uint32_t ui32ObjID);
+void CANMessageClear (uint32_t Base, uint32_t ui32ObjID);
 void CANMessageGet (uint32_t ui32Base, uint32_t ui32ObjID, tCANMsgObject psMsgObject, bool_t bClrPendingInt);
-void CANMessageSet (uint32_t ui32Base, uint32_t ui32ObjID, tCANMsgObject psMsgObject, tMsgObjType eMsgType);
+void CANMessageSet (uint32_t Base, uint32_t ObjID, tCANMsgObject *MsgObject, tMsgObjType MsgType);
 bool_t CANRetryGet (uint32_t ui32Base);
 void CANRetrySet (uint32_t ui32Base, bool_t bAutoRetry);
 uint32_t CANStatusGet (uint32_t ui32Base, tCANStsReg eStatusReg);
+

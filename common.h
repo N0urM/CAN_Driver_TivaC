@@ -1,11 +1,3 @@
-/*
- * common.h
- *
- * Created: 8/23/2019 1:29:45 PM
- *  Author: ebrah
- */ 
-
-
 #ifndef COMMON_H_
 #define COMMON_H_
 

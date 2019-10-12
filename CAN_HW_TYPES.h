@@ -1,23 +1,24 @@
 #ifndef CAN_HW_TYPES_
 #define CAN_HW_TYPES_
 
-#define 	CAN0_BASE					0x40040000
-#define 	CAN1_BASE				  0x40041000
-
+typedef enum{
+    CAN0_BASE = 0x40040000,
+    CAN1_BASE =	0x40041000
+}CAN_Base;
 
 #define 	CAN_CTL_R			    0x00
 #define		CAN_STS_R			    0x004
 #define		CAN_ERR_R			    0x008
 #define		CAN_BIT_R			    0x00C
 #define 	CAN_INT_R			    0x010
-#define 	CAN_TST_R					0x014
+#define 	CAN_TST_R				0x014
 #define		CAN_BRPE			    0x018
 
 
 #define		CAN_IF1CRQ_R			0x020
 #define 	CAN_IF2CRQ_R			0x080
-#define 	CAN_CANIF1CMSK_R	0x024
-#define		CAN_CANIF2CMSK_R	0x084
+#define 	CAN_CANIF1CMSK_R    	0x024
+#define		CAN_CANIF2CMSK_R	    0x084
 #define		CAN_IF1MSK1_R			0x028
 #define		CAN_IF2MSK1_R			0x088
 #define		CAN_IF1MSK2_R			0x02C

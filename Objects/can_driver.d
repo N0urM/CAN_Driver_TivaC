@@ -3,3 +3,4 @@
 .\objects\can_driver.o: CAN_HW_TYPES.h
 .\objects\can_driver.o: common.h
 .\objects\can_driver.o: tm4c123gh6pm.h
+.\objects\can_driver.o: CAN_PORT.h

@@ -1,7 +1,7 @@
 #include "CAN_HW_TYPES.h"
 #include "common.h"
 #include "tm4c123gh6pm.h"
-
+#include "CAN_PORT.h"
 /*Const definitions*/
 
 #define CAN_MAX_STANDARD_ID		0x7FF
@@ -98,10 +98,9 @@ uint32_t CANBitRateSet (uint32_t ui32Base, uint32_t ui32SourceClock, uint32_t ui
 void CANBitTimingGet (uint32_t ui32Base, tCANBitClkParms psClkParms);
 void CANBitTimingSet (uint32_t ui32Base, tCANBitClkParms psClkParms);
 void CANDisable (uint32_t ui32Base);
-void CANEnable (uint32_t ui32Base);
+void CANEnable (CAN_Base ui32Base , Port_Name Port_Base );
 bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t pui32TxCount);
-void CANInit (uint32_t ui32Base);
-
+void CANInit (uint32_t ui32Base,Port_Name Port_Base,uint8_t Mode);
 void CANIntClear (CAN_Base ui32Base, uint32_t ui32IntClr);
 void CANIntDisable (CAN_Base ui32Base, uint32_t ui32IntFlags);
 void CANIntEnable (CAN_Base ui32Base, uint32_t ui32IntFlags);

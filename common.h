@@ -10,7 +10,7 @@ typedef char int8_t;
 typedef uint8_t bool_t;
 typedef unsigned long uint32_t;
 typedef unsigned long long uint64_t;
-/*
+
 #define 	BIT0		0
 #define 	BIT1		1
 #define 	BIT2		2
@@ -45,8 +45,9 @@ typedef unsigned long long uint64_t;
 #define 	BIT30		30
 #define 	BIT31		31
 #define 	BIT32		32
-*/
 
+#define Test_Mode 1
+#define Real_Mode 0 
 
 //#define ACCESS_REG_8BIT(REG)         (*(volatile uint8*)REG)
 

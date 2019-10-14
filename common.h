@@ -51,6 +51,8 @@ typedef unsigned long long uint64_t;
 #define 	BIT32		32
 
 
+#define Test_Mode 1
+#define Real_Mode 0 
 
 //#define ACCESS_REG_8BIT(REG)         (*(volatile uint8*)REG)
 

@@ -17,8 +17,8 @@ typedef enum{
 
 #define		CAN_IF1CRQ_R			0x020
 #define 	CAN_IF2CRQ_R			0x080
-#define 	CAN_CANIF1CMSK_R    	0x024
-#define		CAN_CANIF2CMSK_R	    0x084
+#define 	CAN_IF1CMSK_R    	0x024
+#define		CAN_IF2CMSK_R	    0x084
 #define		CAN_IF1MSK1_R			0x028
 #define		CAN_IF2MSK1_R			0x088
 #define		CAN_IF1MSK2_R			0x02C

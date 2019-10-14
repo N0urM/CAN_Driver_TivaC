@@ -51,7 +51,10 @@ typedef enum {
 }tCANIntStsReg;
 
 typedef enum  {
-	anotherthing
+	CAN_STS_CONTROL = 0,		//the main controller status
+	CAN_STS_TXREQUEST = 1,	//bit mask of objects pending transmission
+	CAN_STS_NEWDAT = 2,			//bit mask of objects with new data
+	CAN_STS_MSGVAL = 3,			//bit mask of objects with valid configuration
 }tCANStsReg;
 
 typedef enum {
@@ -92,25 +95,66 @@ typedef enum {
 	EXTENDED_FRAME = 1
 }tCANFRAME_TYPE;
 
+typedef enum {
+	MsgObj1 = 0x01,
+	MsgObj2 = 0x02,
+	MsgObj3 = 0x03,
+	MsgObj4 = 0x04,
+	MsgObj5 = 0x05,
+	MsgObj6 = 0x06,
+	MsgObj7 = 0x07,
+	MsgObj8 = 0x08,
+	MsgObj9 = 0x09,
+	MsgObj10 = 0x0A,
+	MsgObj11 = 0x0B,
+	MsgObj12 = 0x0C,
+	MsgObj13 = 0x0D,
+	MsgObj14 = 0x0E,
+	MsgObj15 = 0x0F,
+	MsgObj16 = 0x10,
+	MsgObj17 = 0x11,
+	MsgObj18 = 0x12,
+	MsgObj19 = 0x13,
+	MsgObj20 = 0x14,
+	MsgObj21 = 0x15,
+	MsgObj22 = 0x16,
+	MsgObj23 = 0x17,
+	MsgObj24 = 0x18,
+	MsgObj25 = 0x19,
+	MsgObj26 = 0x1A,
+	MsgObj27 = 0x1B,
+	MsgObj28 = 0x1C,
+	MsgObj29 = 0x1D,
+	MsgObj30 = 0x1E,
+	MsgObj31 = 0x1F,
+	MsgObj32 = 0x20,
+	
+}MsgObjID;
+
 /* Prototypes*/
 
 uint32_t CANBitRateSet (uint32_t ui32Base, uint32_t ui32SourceClock, uint32_t ui32BitRate);
-void CANBitTimingGet (uint32_t ui32Base, tCANBitClkParms psClkParms);
-void CANBitTimingSet (uint32_t ui32Base, tCANBitClkParms psClkParms);
+void CANBitTimingGet (uint32_t ui32Base, tCANBitClkParms *psClkParms);
+void CANBitTimingSet (uint32_t ui32Base, tCANBitClkParms *psClkParms);
 void CANDisable (uint32_t ui32Base);
 void CANEnable (uint32_t ui32Base);
-bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t pui32TxCount);
+bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t *pui32TxCount);
 void CANInit (uint32_t ui32Base);
+
 
 void CANIntClear (CAN_Base ui32Base, uint32_t ui32IntClr);
 void CANIntDisable (CAN_Base ui32Base, uint32_t ui32IntFlags);
 void CANIntEnable (CAN_Base ui32Base, uint32_t ui32IntFlags);
-void CANIntRegister (CAN_Base ui32Base, void (pfnHandler)(void));
+void CANIntRegister (CAN_Base ui32Base, void (*pfnHandler)(void));
 uint32_t CANIntStatus (CAN_Base ui32Base, tCANIntStsReg eIntStsReg);
 void CANIntUnregister (CAN_Base ui32Base);
-void CANMessageGet (uint32_t ui32Base, uint32_t ui32ObjID, tCANMsgObject psMsgObject, bool_t bClrPendingInt);
-void CANMessageSet (CAN_Base Base, uint32_t ObjID, tCANMsgObject *MsgObject, tMsgObjType MsgType);
-bool_t CANRetryGet (uint32_t ui32Base);
-void CANRetrySet (uint32_t ui32Base, bool_t bAutoRetry);
-uint32_t CANStatusGet (uint32_t ui32Base, tCANStsReg eStatusReg);
+
+
+void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANMsgObject *MsgObject);
+void CANReceiveMessageSet (CAN_Base Base, MsgObjID ObjID, tCANMsgObject *MsgObject);
+void CANMessageGet (CAN_Base Base, MsgObjID ObjID, tCANMsgObject *psMsgObject, bool_t bClrPendingInt);
+void CANMessageClear(CAN_Base Base, uint32_t ObjID);
+bool_t CANRetryGet (CAN_Base Base);
+void CANRetrySet (CAN_Base Base, bool_t bAutoRetry);
+uint32_t CANStatusGet (CAN_Base Base, tCANStsReg eStatusReg);
 

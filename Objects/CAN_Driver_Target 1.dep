@@ -1,16 +1,0 @@
-Dependencies for Project 'CAN_Driver', Target 'Target 1': (DO NOT MODIFY !)
-F (.\can_driver.c)(0x5DA27334)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\can_driver.o --omf_browse .\objects\can_driver.crf --depend .\objects\can_driver.d)
-I (can_driver.h)(0x5DA0ED4D)
-I (CAN_HW_TYPES.h)(0x5DA0EBA0)
-I (common.h)(0x5DA0E6A9)
-I (tm4c123gh6pm.h)(0x53886E7A)
-F (.\main.c)(0x5DA2725A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (can_driver.h)(0x5DA0ED4D)
-I (CAN_HW_TYPES.h)(0x5DA0EBA0)
-I (common.h)(0x5DA0E6A9)
-I (tm4c123gh6pm.h)(0x53886E7A)
-F (.\tm4c123gh6pm.h)(0x5DA2725A)()
-F (.\CAN_HW_TYPES.h)(0x5DA2725A)()
-F (RTE\Device\TM4C123GH6PM\startup_TM4C123.s)(0x5DA2725A)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\listings\startup_tm4c123.lst --xref -o .\objects\startup_tm4c123.o --depend .\objects\startup_tm4c123.d)
-F (RTE\Device\TM4C123GH6PM\system_TM4C123.c)(0x5DA2725A)(--c99 --gnu -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include-IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="528" -D_RTE_ -DTM4C123GH6PM-o .\objects\system_tm4c123.o --omf_browse .\objects\system_tm4c123.crf --depend .\objects\system_tm4c123.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)

@@ -77,8 +77,21 @@ typedef enum {
 }tCAN_MSG_LENGTH;
         
 typedef struct {
-	//again
+	uint32_t ui32SyncPropPhase1Seg;
+	uint32_t ui32Phase2Seg;
+	uint32_t ui32SJW;
+	uint32_t ui32Quantum_num ;
 }tCANBitClkParms;
+
+typedef struct {
+	
+	uint32_t Msg_ID;
+	uint32_t Flags;
+	tCAN_MSG_LENGTH Msg_Length;
+	uint8_t *Msg_Data;		// Array
+	
+}tCANConfigTXMsgObj;
+
 
 typedef struct {
 	
@@ -88,7 +101,16 @@ typedef struct {
 	tCAN_MSG_LENGTH Msg_Length;
 	uint8_t *Msg_Data;		// Array
 	
-}tCANMsgObject;
+}tCANConfigRXMsgObj;
+
+
+typedef struct {
+	
+	tCAN_MSG_LENGTH Msg_Length;
+	uint8_t *Msg_Data;		// Array
+	
+}tCANReadRXData;
+
 
 typedef enum {
 	STANDARD_FRAME = 0,
@@ -133,13 +155,13 @@ typedef enum {
 
 /* Prototypes*/
 
-uint32_t CANBitRateSet (uint32_t ui32Base, uint32_t ui32SourceClock, uint32_t ui32BitRate);
-void CANBitTimingGet (uint32_t ui32Base, tCANBitClkParms *psClkParms);
-void CANBitTimingSet (uint32_t ui32Base, tCANBitClkParms *psClkParms);
-void CANDisable (uint32_t ui32Base);
-void CANEnable (CAN_Base ui32Base , Port_Name Port_Base );
+void GPIO_Init (Port_Name Port_Base);
+void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms , uint32_t SourceClock , uint32_t BitRate);
+void CANDisable (CAN_Base Base);
+void CANEnable (CAN_Base Base);
 bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t pui32TxCount);
-void CANInit (uint32_t ui32Base,Port_Name Port_Base,uint8_t Mode);
+void CANInit(CAN_Base Base,uint8_t Mode);
+
 
 void CANIntClear (CAN_Base ui32Base, uint32_t ui32IntClr);
 void CANIntDisable (CAN_Base ui32Base, uint32_t ui32IntFlags);
@@ -149,11 +171,12 @@ uint32_t CANIntStatus (CAN_Base ui32Base, tCANIntStsReg eIntStsReg);
 void CANIntUnregister (CAN_Base ui32Base);
 
 
-void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANMsgObject *MsgObject);
-void CANReceiveMessageSet (CAN_Base Base, MsgObjID ObjID, tCANMsgObject *MsgObject);
-void CANMessageGet (CAN_Base Base, MsgObjID ObjID, tCANMsgObject *psMsgObject, bool_t bClrPendingInt);
+void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *MsgObject);
+void CANReceiveMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigRXMsgObj *MsgObject);
+void CANMessageGet (CAN_Base Base, MsgObjID ObjID, tCANReadRXData *psMsgObject, bool_t bClrPendingInt);
 void CANMessageClear(CAN_Base Base, uint32_t ObjID);
 bool_t CANRetryGet (CAN_Base Base);
 void CANRetrySet (CAN_Base Base, bool_t bAutoRetry);
 uint32_t CANStatusGet (CAN_Base Base, tCANStsReg eStatusReg);
+void CAN_Write(CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *MsgObject);
 

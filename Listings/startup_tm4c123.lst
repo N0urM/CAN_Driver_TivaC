@@ -426,9 +426,9 @@ ARM Macro Assembler    Page 7
 ]
   233 00000000                 IMPORT           SystemInit
   234 00000000                 IMPORT           __main
-  235 00000000 4846            LDR              R0, =SystemInit
+  235 00000000 483F            LDR              R0, =SystemInit
   236 00000002 4780            BLX              R0
-  237 00000004 4846            LDR              R0, =__main
+  237 00000004 483F            LDR              R0, =__main
   238 00000006 4700            BX               R0
   239 00000008                 ENDP
   240 00000008         
@@ -1222,100 +1222,36 @@ ARM Macro Assembler    Page 19
   950 000000F4                 EXPORT           __user_initial_stackheap
   951 000000F4         __user_initial_stackheap
   952 000000F4         
-  953 000000F4 480B            LDR              R0, =  Heap_Mem
-  954 000000F6 490C            LDR              R1, =(Stack_Mem + Stack_Size)
-  955 000000F8 4A0A            LDR              R2, = (Heap_Mem +  Heap_Size)
-  956 000000FA 4B0C            LDR              R3, = Stack_Mem
+  953 000000F4 4804            LDR              R0, =  Heap_Mem
+  954 000000F6 4905            LDR              R1, =(Stack_Mem + Stack_Size)
+  955 000000F8 4A03            LDR              R2, = (Heap_Mem +  Heap_Size)
+  956 000000FA 4B05            LDR              R3, = Stack_Mem
   957 000000FC 4770            BX               LR
   958 000000FE         
   959 000000FE 00 00           ALIGN
   960 00000100         
   961 00000100                 ENDIF
   962 00000100         
-  963 00000100         ;*******************************************************
+  963 00000100         
 
 
 
 ARM Macro Assembler    Page 20 
 
 
-                       ***********************
-  964 00000100         ;
-  965 00000100         ; Useful functions.
-  966 00000100         ;
-  967 00000100         ;*******************************************************
-                       ***********************
-  968 00000100                 EXPORT           DisableInterrupts
-  969 00000100                 EXPORT           EnableInterrupts
-  970 00000100                 EXPORT           StartCritical
-  971 00000100                 EXPORT           EndCritical
-  972 00000100                 EXPORT           WaitForInterrupt
-  973 00000100         
-  974 00000100         ;*********** DisableInterrupts ***************
-  975 00000100         ; disable interrupts
-  976 00000100         ; inputs:  none
-  977 00000100         ; outputs: none
-  978 00000100         DisableInterrupts
-  979 00000100 B672            CPSID            I
-  980 00000102 4770            BX               LR
-  981 00000104         
-  982 00000104         ;*********** EnableInterrupts ***************
-  983 00000104         ; enable interrupts
-  984 00000104         ; inputs:  none
-  985 00000104         ; outputs: none
-  986 00000104         EnableInterrupts
-  987 00000104 B662            CPSIE            I
-  988 00000106 4770            BX               LR
-  989 00000108         
-  990 00000108         ;*********** StartCritical ************************
-  991 00000108         ; make a copy of previous I bit, disable interrupts
-  992 00000108         ; inputs:  none
-  993 00000108         ; outputs: previous I bit
-  994 00000108         StartCritical
-  995 00000108 F3EF 8010       MRS              R0, PRIMASK ; save old status
-  996 0000010C B672            CPSID            I           ; mask all (except 
-                                                            faults)
-  997 0000010E 4770            BX               LR
-  998 00000110         
-  999 00000110         ;*********** EndCritical ************************
- 1000 00000110         ; using the copy of previous I bit, restore I bit to pre
-                       vious value
- 1001 00000110         ; inputs:  previous I bit
- 1002 00000110         ; outputs: none
- 1003 00000110         EndCritical
- 1004 00000110 F380 8810       MSR              PRIMASK, R0
- 1005 00000114 4770            BX               LR
- 1006 00000116         
- 1007 00000116         ;*********** WaitForInterrupt ************************
- 1008 00000116         ; go to low power mode while waiting for the next interr
-                       upt
- 1009 00000116         ; inputs:  none
- 1010 00000116         ; outputs: none
- 1011 00000116         WaitForInterrupt
- 1012 00000116 BF30            WFI
- 1013 00000118 4770            BX               LR
- 1014 0000011A         
- 1015 0000011A                 END
-              00 00 00000000 
+  964 00000100                 END
               00000000 
-
-
-
-ARM Macro Assembler    Page 21 
-
-
+              00000000 
               00000000 
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\objects\startup_tm4c123.d -o.\objects\startup_tm4c123.o -I.\R
-TE\_Target_1 -IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Cor
-e\Include -IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\DSP\In
-clude -IC:\Users\nourm\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\NN\Include
- -IC:\Users\nourm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM
-4C123 --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 528" --pr
-edefine="_RTE_ SETA 1" --predefine="TM4C123GH6PM SETA 1" --list=.\listings\star
-tup_tm4c123.lst RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+erwork --depend=.\objects\startup_tm4c123.d -o.\objects\startup_tm4c123.o -I"D:
+\Graduation Project\Final CAN\CAN Driver Final ISA\RTE" -IC:\Keil_v5\ARM\PACK\A
+RM\CMSIS\4.5.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\I
+nclude\TM4C123 --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 
+521" --predefine="_RTE_ SETA 1" --predefine="TM4C123GH6PM SETA 1" --list=.\list
+ings\startup_tm4c123.lst RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 
 
@@ -1591,37 +1527,7 @@ Symbol: DebugMon_Handler
       At line 75 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 274 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
-DisableInterrupts 00000100
-
-Symbol: DisableInterrupts
-   Definitions
-      At line 978 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-   Uses
-      At line 968 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-Comment: DisableInterrupts used once
-EnableInterrupts 00000104
-
-Symbol: EnableInterrupts
-   Definitions
-      At line 986 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-   Uses
-      At line 969 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-Comment: EnableInterrupts used once
-EndCritical 00000110
-
-Symbol: EndCritical
-   Definitions
-      At line 1003 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-   Uses
-      At line 971 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-Comment: EndCritical used once
 FLASH_Handler 00000054
-
-
-
-ARM Macro Assembler    Page 4 Alphabetic symbol ordering
-Relocatable symbols
-
 
 Symbol: FLASH_Handler
    Definitions
@@ -1646,6 +1552,12 @@ Symbol: GPIOA_Handler
       At line 289 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 82 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
       At line 290 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 GPIOB_Handler 0000001C
@@ -1681,12 +1593,6 @@ Symbol: GPIOE_Handler
    Definitions
       At line 313 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
-
-
-
-ARM Macro Assembler    Page 5 Alphabetic symbol ordering
-Relocatable symbols
-
       At line 86 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 314 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
@@ -1711,6 +1617,12 @@ Symbol: GPIOG_Handler
 GPIOH_Handler 0000005A
 
 Symbol: GPIOH_Handler
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Relocatable symbols
+
    Definitions
       At line 481 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
@@ -1746,12 +1658,6 @@ Symbol: GPIOL_Handler
 
 GPIOM_Handler 000000BE
 
-
-
-
-ARM Macro Assembler    Page 6 Alphabetic symbol ordering
-Relocatable symbols
-
 Symbol: GPIOM_Handler
    Definitions
       At line 781 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -1776,6 +1682,12 @@ Symbol: GPIOP0_Handler
    Uses
       At line 198 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 800 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Relocatable symbols
+
 
 GPIOP1_Handler 000000C6
 
@@ -1811,12 +1723,6 @@ Symbol: GPIOP4_Handler
       At line 823 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 202 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-
-
-
-ARM Macro Assembler    Page 7 Alphabetic symbol ordering
-Relocatable symbols
-
       At line 824 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 GPIOP5_Handler 000000CE
@@ -1841,6 +1747,12 @@ GPIOP7_Handler 000000D2
 
 Symbol: GPIOP7_Handler
    Definitions
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Relocatable symbols
+
       At line 841 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 205 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -1876,12 +1788,6 @@ Symbol: GPIOQ2_Handler
 GPIOQ3_Handler 000000DA
 
 Symbol: GPIOQ3_Handler
-
-
-
-ARM Macro Assembler    Page 8 Alphabetic symbol ordering
-Relocatable symbols
-
    Definitions
       At line 865 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
@@ -1905,6 +1811,12 @@ Symbol: GPIOQ5_Handler
    Uses
       At line 211 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 878 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Relocatable symbols
 
 GPIOQ6_Handler 000000E0
 
@@ -1942,12 +1854,6 @@ Symbol: GPIOS_Handler
       At line 215 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 902 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
-
-
-ARM Macro Assembler    Page 9 Alphabetic symbol ordering
-Relocatable symbols
-
-
 HIB_Handler 0000006E
 
 Symbol: HIB_Handler
@@ -1971,6 +1877,12 @@ I2C0_Handler 0000002A
 Symbol: I2C0_Handler
    Definitions
       At line 337 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Relocatable symbols
+
    Uses
       At line 90 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 338 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2006,12 +1918,6 @@ I2C4_Handler 000000BA
 
 Symbol: I2C4_Handler
    Definitions
-
-
-
-ARM Macro Assembler    Page 10 Alphabetic symbol ordering
-Relocatable symbols
-
       At line 769 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 191 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2036,6 +1942,12 @@ Symbol: MemManage_Handler
       At line 255 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 NMI_Handler 00000008
+
+
+
+ARM Macro Assembler    Page 10 Alphabetic symbol ordering
+Relocatable symbols
+
 
 Symbol: NMI_Handler
    Definitions
@@ -2071,12 +1983,6 @@ Symbol: PWM0_0_Handler
       At line 92 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 350 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
-
-
-
-ARM Macro Assembler    Page 11 Alphabetic symbol ordering
-Relocatable symbols
-
 PWM0_1_Handler 00000030
 
 Symbol: PWM0_1_Handler
@@ -2101,6 +2007,12 @@ Symbol: PWM0_3_Handler
    Definitions
       At line 553 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
+
+
+
+ARM Macro Assembler    Page 11 Alphabetic symbol ordering
+Relocatable symbols
+
       At line 127 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 554 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
@@ -2136,12 +2048,6 @@ PWM1_FAULT_Handler 000000F0
 Symbol: PWM1_FAULT_Handler
    Definitions
       At line 931 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-
-
-
-ARM Macro Assembler    Page 12 Alphabetic symbol ordering
-Relocatable symbols
-
    Uses
       At line 220 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 932 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2165,6 +2071,12 @@ Symbol: QEI0_Handler
       At line 368 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 QEI1_Handler 00000066
+
+
+
+
+ARM Macro Assembler    Page 12 Alphabetic symbol ordering
+Relocatable symbols
 
 Symbol: QEI1_Handler
    Definitions
@@ -2202,12 +2114,6 @@ Symbol: SSI0_Handler
 
 SSI1_Handler 0000005E
 
-
-
-ARM Macro Assembler    Page 13 Alphabetic symbol ordering
-Relocatable symbols
-
-
 Symbol: SSI1_Handler
    Definitions
       At line 493 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2231,6 +2137,12 @@ Symbol: SSI3_Handler
       At line 619 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 140 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+
+
+
+ARM Macro Assembler    Page 13 Alphabetic symbol ordering
+Relocatable symbols
+
       At line 620 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 SVC_Handler 00000012
@@ -2251,14 +2163,6 @@ Symbol: SYSCTL_Handler
       At line 110 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 458 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
-StartCritical 00000108
-
-Symbol: StartCritical
-   Definitions
-      At line 994 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-   Uses
-      At line 970 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-Comment: StartCritical used once
 SysTick_Handler 00000018
 
 Symbol: SysTick_Handler
@@ -2266,12 +2170,6 @@ Symbol: SysTick_Handler
       At line 283 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 78 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-
-
-
-ARM Macro Assembler    Page 14 Alphabetic symbol ordering
-Relocatable symbols
-
       At line 284 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
 TIMER0A_Handler 00000040
@@ -2304,6 +2202,12 @@ Symbol: TIMER1A_Handler
 TIMER1B_Handler 00000046
 
 Symbol: TIMER1B_Handler
+
+
+
+ARM Macro Assembler    Page 14 Alphabetic symbol ordering
+Relocatable symbols
+
    Definitions
       At line 421 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
@@ -2331,12 +2235,6 @@ Symbol: TIMER2B_Handler
 TIMER3A_Handler 00000060
 
 Symbol: TIMER3A_Handler
-
-
-
-ARM Macro Assembler    Page 15 Alphabetic symbol ordering
-Relocatable symbols
-
    Definitions
       At line 499 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
@@ -2370,6 +2268,12 @@ Symbol: TIMER4B_Handler
       At line 153 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 674 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
+
+
+ARM Macro Assembler    Page 15 Alphabetic symbol ordering
+Relocatable symbols
+
+
 TIMER5A_Handler 0000009C
 
 Symbol: TIMER5A_Handler
@@ -2396,12 +2300,6 @@ Symbol: UART0_Handler
    Uses
       At line 87 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 320 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-
-
-
-ARM Macro Assembler    Page 16 Alphabetic symbol ordering
-Relocatable symbols
-
 
 UART1_Handler 00000026
 
@@ -2434,6 +2332,12 @@ UART4_Handler 0000008C
 
 Symbol: UART4_Handler
    Definitions
+
+
+
+ARM Macro Assembler    Page 16 Alphabetic symbol ordering
+Relocatable symbols
+
       At line 631 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 142 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2461,12 +2365,6 @@ UART7_Handler 00000092
 
 Symbol: UART7_Handler
    Definitions
-
-
-
-ARM Macro Assembler    Page 17 Alphabetic symbol ordering
-Relocatable symbols
-
       At line 649 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
    Uses
       At line 145 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2499,6 +2397,12 @@ Symbol: USB0_Handler
       At line 126 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 548 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
+
+
+
+ARM Macro Assembler    Page 17 Alphabetic symbol ordering
+Relocatable symbols
+
 UsageFault_Handler 00000010
 
 Symbol: UsageFault_Handler
@@ -2525,12 +2429,6 @@ Symbol: WTIMER0A_Handler
    Uses
       At line 176 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 692 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-
-
-
-
-ARM Macro Assembler    Page 18 Alphabetic symbol ordering
-Relocatable symbols
 
 WTIMER0B_Handler 000000A2
 
@@ -2564,6 +2462,12 @@ WTIMER2A_Handler 000000A8
 Symbol: WTIMER2A_Handler
    Definitions
       At line 715 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
+
+
+
+ARM Macro Assembler    Page 18 Alphabetic symbol ordering
+Relocatable symbols
+
    Uses
       At line 180 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 716 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2591,12 +2495,6 @@ WTIMER3B_Handler 000000AE
 Symbol: WTIMER3B_Handler
    Definitions
       At line 733 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-
-
-
-ARM Macro Assembler    Page 19 Alphabetic symbol ordering
-Relocatable symbols
-
    Uses
       At line 183 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 734 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2630,6 +2528,12 @@ Symbol: WTIMER5A_Handler
 
 WTIMER5B_Handler 000000B6
 
+
+
+ARM Macro Assembler    Page 19 Alphabetic symbol ordering
+Relocatable symbols
+
+
 Symbol: WTIMER5B_Handler
    Definitions
       At line 757 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
@@ -2637,14 +2541,6 @@ Symbol: WTIMER5B_Handler
       At line 187 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
       At line 758 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 
-WaitForInterrupt 00000116
-
-Symbol: WaitForInterrupt
-   Definitions
-      At line 1011 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-   Uses
-      At line 972 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
-Comment: WaitForInterrupt used once
 __user_initial_stackheap 000000F4
 
 Symbol: __user_initial_stackheap
@@ -2653,7 +2549,7 @@ Symbol: __user_initial_stackheap
    Uses
       At line 950 in file RTE\Device\TM4C123GH6PM\startup_TM4C123.s
 Comment: __user_initial_stackheap used once
-125 symbols
+120 symbols
 
 
 
@@ -2718,4 +2614,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-480 symbols in table
+475 symbols in table

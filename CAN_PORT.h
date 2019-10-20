@@ -24,11 +24,15 @@ typedef enum{
 
 #define DEN_R		  	0x51C 
 
+#define LOCK_R		 	0x520 
+
+
 
 
 #define GPIOF      0x00000020  // Port F Clock Gating Control
 #define GPIOE      0x00000010  // Port E Clock Gating Control
 #define GPIOB      0x00000002  // Port B Clock Gating Control
 #define GPIOA      0x00000001  // Port A Clock Gating Control
+ 
 
 #endif

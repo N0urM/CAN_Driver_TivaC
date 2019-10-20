@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'CAN_Driver' 
+ * Project: 'CAN Driver 3' 
  * Target:  'Target 1' 
  */
 

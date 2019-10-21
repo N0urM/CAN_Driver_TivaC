@@ -1,59 +1,84 @@
 #include "can_driver.h"
 
 void EnableInterrupts(void);
-void Test_Yomna(void);
 void CAN0_Handler(void);
+void Test_Yomna(void);
+void CAN_Cnfg_TX_Msg(CAN_Base Base ,MsgObjID ObjID, uint32_t msg_ID, tCAN_MSG_LENGTH msg_Length, uint8_t *msg_Data, uint32_t flags);
+void CAN_Cnfg_RX_Msg(CAN_Base Base , MsgObjID ObjID, uint32_t msg_ID, uint32_t msg_ID_MSK, uint32_t flags);
 
-uint8_t dataT[8] = "Helloyom";
+uint8_t dataT[8] = "Helloooo";
 uint8_t dataR[8];
 tCANReadRXData ReceivedData;
 tCANReadRXData* PReceivedData = &ReceivedData;
 
 int main(){
-
-	ReceivedData.Msg_Data = dataR;
-	Test_Yomna();
+		
+		ReceivedData.Msg_Data = dataR;
+		uint32_t IntEnableFlags = CAN_INT_MASTER | CAN_INT_STATUS;
+		
+		GPIO_Init(Port_B);
+		CANInit(CAN0_BASE, Real_Mode);
+		CANIntEnable(CAN0_BASE, IntEnableFlags);
+		
 	
-//	tCANConfigTXMsgObj msgT;
-	tCANConfigRXMsgObj msgR;
-	
-	/*msgT.Msg_ID = 0x12;
-	msgT.Msg_Length = EIGHT_BYTE;
-	msgT.Msg_Data = dataT;
-	msgT.Flags = 0;
-	
-	tCANConfigTXMsgObj* PMsgObjT = &msgT;
-	*/
-	
-	msgR.Msg_ID = 0x12;
-	msgR.Msg_ID_MSK = 0x0;
-	msgR.Flags = MSG_OBJ_RX_INT_ENABLE;
-	
-	tCANConfigRXMsgObj* PMsgObjR = &msgR;
-	
-	//CANTransmitMessageSet(CAN0_BASE, MsgObj1, PMsgObjT);
-	CANReceiveMessageSet(CAN0_BASE, MsgObj2, PMsgObjR);
+		//Configuration of TX Message Object1
+		//CAN_Cnfg_TX_Msg(CAN0_BASE, MsgObj1, 0x12, EIGHT_BYTE, dataT, MSG_OBJ_TX_INT_ENABLE);
+		
+		//Configuration of RX Message Object2
+		CAN_Cnfg_RX_Msg(CAN0_BASE, MsgObj2, 0x12, 0x0, 0);
+		
 	
 		//BIT RATE :
 		CAN0_CTL_R |= 0x40;									  //Write accesses to the CANBIT register are allowed
 		CAN0_BIT_R = 0x1443;								  //  calculate BaudRate
 	  CAN0_CTL_R &=~ 0x40;		
-		CAN0_CTL_R &= ~(CAN_CTL_INIT);		// Clear INIT bit in CAN0_CTL Register to Leave initialization mode and operate normal
 		
-		//CAN0_CTL_R |= (1<<7);						  // The CAN Controller is in Test Mode
-		//CAN0_TST_R |= (1<<4);							// Enable LoopBack Mode
-	//	CAN_Write(CAN0_BASE, MsgObj1, PMsgObjT);
+		CANEnable(CAN0_BASE);
+		//CAN_Write(CAN0_BASE, MsgObj1, PMsgObjT);
 		
 	while (1)
 	{
-		//CANMessageGet(CAN0_BASE, MsgObj2, PMsgObjR, FALSE);
-		//if(ACCESS_REG(CAN0_BASE + CAN_NWDA1_R) & 0x2 ){
-				
-			//	CAN0_IF2CMSK_R = 0x007F;
-				//CAN0_IF2CRQ_R = 0x02;
-			
-		//}
+		
 	}	
+
+}
+
+void CAN_Cnfg_TX_Msg(CAN_Base Base ,MsgObjID ObjID, uint32_t msg_ID, tCAN_MSG_LENGTH msg_Length, uint8_t *msg_Data, uint32_t flags){
+
+		tCANConfigTXMsgObj msgT;
+		tCANConfigTXMsgObj* PMsgObjT = &msgT;
+		
+		msgT.Msg_ID = msg_ID;
+		msgT.Msg_Length = msg_Length;
+		msgT.Msg_Data = msg_Data;
+		msgT.Flags = flags;
+		
+		CANTransmitMessageSet(Base, ObjID, PMsgObjT);
+	
+}
+
+
+void CAN_Cnfg_RX_Msg(CAN_Base Base , MsgObjID ObjID, uint32_t msg_ID, uint32_t msg_ID_MSK, uint32_t flags){
+
+		tCANConfigRXMsgObj msgR;
+		tCANConfigRXMsgObj* PMsgObjR = &msgR;
+		
+		msgR.Msg_ID = msg_ID;
+		msgR.Msg_ID_MSK = msg_ID_MSK;
+		msgR.Flags = flags;
+		
+		CANReceiveMessageSet(Base, ObjID, PMsgObjR);
+
+}
+
+void CAN0_Handler(void)
+{
+		if(CAN0_MSG1INT_R == 0x2){
+				CAN0_IF2CMSK_R = 0x007F;
+				CAN0_IF2CRQ_R = 0x02;						// Message number
+				CANMessageGet(CAN0_BASE, MsgObj2, PReceivedData, TRUE);
+				//CAN0_IF2MCTL_R &= ~(1<<13);
+		}
 
 }
 
@@ -83,14 +108,3 @@ void Test_Yomna(void){
 	
 }
 
-void CAN0_Handler(void)
-{
-		if(CAN0_MSG1INT_R == 0x2){
-			CAN0_IF2CMSK_R = 0x007F;
-			CAN0_IF2CRQ_R = 0x02;						// Message number
-			CANMessageGet(CAN0_BASE, MsgObj2, PReceivedData, FALSE );
-		}
-		
-		CAN0_IF2MCTL_R &= ~(1<<13);
-
-}

@@ -10,11 +10,11 @@ void GPIO_Init (Port_Name Port_Base){
    	if(Port_Base == Port_E) SET_BIT(SYSCTL_RCGC2_R,GPIOE); // clock For Port E 
   	if(Port_Base == Port_F) SET_BIT(SYSCTL_RCGC2_R,GPIOF); // clock For Port F
 		
-	//Unlock PORTS
+	  //Unlock PORTS
 		ACCESS_REG(Port_Base+LOCK_R) |= GPIO_LOCK_KEY ;
 		ACCESS_REG(Port_Base+CR_R) 	  = 0x00FF ; 
 
-				//Disable Analog Mode :
+		//Disable Analog Mode :
 		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT0));
 		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT1));
 		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT2));
@@ -66,6 +66,10 @@ void GPIO_Init (Port_Name Port_Base){
 	}
 
 }
+
+/*********************************************************************************************************/
+
+
 void CANInit(CAN_Base Base,uint8_t Mode){
 	
 	if(Base == CAN0_BASE){		
@@ -75,6 +79,7 @@ void CANInit(CAN_Base Base,uint8_t Mode){
 		SET_BIT(SYSCTL_RCGC0_R , SYSCTL_RCGC0_CAN1 ) ;  			 // Clock For CAN1
 	 
 	}
+	
 	//CAN CONFIGURATION :
 	SET_BIT((Base+CAN_CTL_R) , CAN_CTL_INIT);
 
@@ -91,6 +96,10 @@ void CANInit(CAN_Base Base,uint8_t Mode){
 	}
 
 }
+
+/*********************************************************************************************************/
+
+
 void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms , uint32_t SourceClock , uint32_t BitRate){
 
 	uint32_t Bit_Time ;
@@ -116,12 +125,18 @@ void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms , uint32_t Sour
 
 }
 
+/*********************************************************************************************************/
+
+
 void CANEnable (CAN_Base Base){
 		
 	//Out From Initialization Mode To Start Transmit :
 	CLEAR_BIT((Base+CAN_CTL_R) , CAN_CTL_INIT);
 
 }
+
+
+/*********************************************************************************************************/
 
 void CANDisable (CAN_Base Base){
 	
@@ -137,11 +152,18 @@ void CANDisable (CAN_Base Base){
 }
 
 /*********************************************************************************************************/
+// flags -> CAN_INT_MASTER | CAN_INT_ERROR | CAN_INT_STATUS 
 
 void CANIntEnable (CAN_Base Base, uint32_t ui32IntFlags){
 
+		if(Base == CAN0_BASE){
+				NVIC_EN1_R |= (1<<7);
+		} else if(Base == CAN1_BASE){
+				NVIC_EN1_R |= (1<<8);
+		}
+		
     SET_BIT((Base+ CAN_CTL_R) , ui32IntFlags);
-
+		
 }
 
 /*********************************************************************************************************/
@@ -188,14 +210,6 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 		} else if((MsgObject -> Msg_ID) > CAN_MAX_EXTENDED_ID){
 			 return;    //UNValid Msg ID
 		}
-			
-		/*// Check using mask or not
-		if(MsgObject->Flags & MSG_OBJ_USE_ID_FILTER){
-			SET_BIT((Base+CAN_IF1MCTL_R), CAN_IF1MCTL_UMASK);
-			
-			SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_MASK);			 // Set Mask bit
-		}
-		*/
 
 		SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_WRNRD);		 // Set WRNRD bit = 1
 		SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_ARB);			 // Set ARB bit to enable access arbitration bits
@@ -209,14 +223,6 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 		if(Frame_Type == STANDARD_FRAME){
 			
 			CLEAR_BIT((Base + CAN_IF1ARB2_R), CAN_IF1ARB2_XTD);
-
-			/*if(MsgObject->Flags & MSG_OBJ_USE_ID_FILTER){
-			
-				ACCESS_REG(Base + CAN_IF1MSK2_R) &= ~(0x1FFF);						   // First clear Mask2 Field
-				ACCESS_REG(Base + CAN_IF1MSK2_R) |= (MsgObject->Msg_ID_MSK); // Write the ID mask
-				CLEAR_BIT(Base + CAN_IF1MSK2_R, CAN_IF1MSK2_MXTD);					 // Clear MXTD Bit
-				SET_BIT(Base + CAN_IF1MSK2_R, CAN_IF1MSK2_MDIR);					   // The message direction DIR bit is used for acceptance filtering
-			}*/
 			
 			ACCESS_REG(Base + CAN_IF1ARB2_R) &= ~(0x1FFF);								 // First clear ARB2 Field
 			ACCESS_REG(Base + CAN_IF1ARB2_R) |= ((MsgObject->Msg_ID) << 2);	// Write the message ID
@@ -227,17 +233,6 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 		 else if (Frame_Type == EXTENDED_FRAME){
 			
 			SET_BIT((Base + CAN_IF1ARB2_R), CAN_IF1ARB2_XTD);
-			
-			/*if(MsgObject->Flags & MSG_OBJ_USE_ID_FILTER){
-				
-					ACCESS_REG(Base + CAN_IF1MSK1_R) &= ~(0xFFFF);						                // First clear Mask1 Field
-					ACCESS_REG(Base + CAN_IF1MSK1_R) |= (MsgObject->Msg_ID_MSK & 0x0000FFFF);	// Write first part of ID_MSK
-					
-					ACCESS_REG(Base + CAN_IF1MSK2_R) &= ~(0x1FFF);						                // First clear Mask2 Field
-					ACCESS_REG(Base + CAN_IF1MSK2_R) |= ((MsgObject->Msg_ID_MSK & 0x1FFF0000) >> 16);	// Write Second part of ID_MSK
-					SET_BIT(Base + CAN_IF1MSK2_R, CAN_IF1MSK2_MXTD);						              // Set MXTD Bit
-					SET_BIT(Base + CAN_IF1MSK2_R, CAN_IF1MSK2_MDIR);					                // The message direction DIR bit is used for acceptance filtering
-			}*/
 			 
 			ACCESS_REG(Base + CAN_IF1ARB1_R) &= ~(0xFFFF);													      // First clear ARB1 Field
 			ACCESS_REG(Base + CAN_IF1ARB1_R) |= (MsgObject->Msg_ID & 0x0000FFFF);		      // Write first part of ID
@@ -264,6 +259,7 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 		ACCESS_REG((Base + CAN_IF1MCTL_R)) &= ~(0xF);			            //First clear DLC Field
 		ACCESS_REG((Base + CAN_IF1MCTL_R)) |= MsgObject->Msg_Length;	// Write the message length code
 
+		/*	
 		// Data
 		ACCESS_REG((Base + CAN_IF1DA1_R)) |= (MsgObject -> Msg_Data[0]);
 		ACCESS_REG((Base + CAN_IF1DA1_R)) |= ((MsgObject -> Msg_Data[1]) << 8);
@@ -276,6 +272,7 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 
 		ACCESS_REG((Base + CAN_IF1DB2_R)) |= (MsgObject -> Msg_Data[6]);
 		ACCESS_REG((Base + CAN_IF1DB2_R)) |= ((MsgObject -> Msg_Data[7]) << 8);
+		*/
 
 		ACCESS_REG((Base + CAN_IF1CRQ_R)) = ObjID;				// Write Message number into MNUM field to start transfer
 	
@@ -371,7 +368,6 @@ void CANReceiveMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigRXMsgObj *Ms
 			SET_BIT((Base + CAN_IF2MCTL_R), CAN_IF2MCTL_EOB);
 		}
 		
-		ACCESS_REG((Base + CAN_IF2MCTL_R)) &= ~(0xF);			            //First clear DLC Field
 		ACCESS_REG((Base + CAN_IF2CRQ_R)) = ObjID;										// Write Message number into MNUM field to start transfer
 	
 }
@@ -398,7 +394,9 @@ void CANMessageGet (CAN_Base Base, MsgObjID ObjID, tCANReadRXData *psMsgObject, 
 		
 		// Message Length
 		psMsgObject->Msg_Length = (ACCESS_REG((Base + CAN_IF2MCTL_R)) & 0xF);
-		
+		if(bClrPendingInt == TRUE){
+				CLEAR_BIT((Base + CAN_IF2MCTL_R), CAN_IF2MCTL_INTPND);
+		}
 		
 }
 	

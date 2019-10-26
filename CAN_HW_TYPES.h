@@ -6,6 +6,8 @@ typedef enum{
     CAN1_BASE =	0x40041000
 }CAN_Base;
 
+#define 	SYSCTL_RCGC0      0x400FE100
+
 #define 	CAN_CTL_R			    0x00
 #define		CAN_STS_R			    0x004
 #define		CAN_ERR_R			    0x008

@@ -2,29 +2,23 @@
 
 
 void GPIO_Init (Port_Name Port_Base){
-		volatile uint32_t delay ;
-		delay = SYSCTL_RCGC2_R ;
-	
-		if(Port_Base == Port_A) SET_BIT(SYSCTL_RCGC2_R,GPIOA); // Clock For Port A 
-		if(Port_Base == Port_B) SET_BIT(SYSCTL_RCGC2_R,GPIOB); // clock For Port B 
-   	if(Port_Base == Port_E) SET_BIT(SYSCTL_RCGC2_R,GPIOE); // clock For Port E 
-  	if(Port_Base == Port_F) SET_BIT(SYSCTL_RCGC2_R,GPIOF); // clock For Port F
-		
-	  //Unlock PORTS
-		ACCESS_REG(Port_Base+LOCK_R) |= GPIO_LOCK_KEY ;
-		ACCESS_REG(Port_Base+CR_R) 	  = 0x00FF ; 
 
-		//Disable Analog Mode :
-		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT0));
-		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT1));
-		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT2));
-		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT3));
+		if(Port_Base == Port_A) SET_BIT(SYSCTL_RCGC2,GPIOA); // Clock For Port A 
+		if(Port_Base == Port_B) SET_BIT(SYSCTL_RCGC2,GPIOB); // clock For Port B 
+		if(Port_Base == Port_E) SET_BIT(SYSCTL_RCGC2,GPIOE); // clock For Port E 
+		if(Port_Base == Port_F) SET_BIT(SYSCTL_RCGC2,GPIOF); // clock For Port F
+		
+		//Unlock PORTS
+		ACCESS_REG(Port_Base+LOCK_R) = GPIO_LOCK_KEY ;
+		ACCESS_REG(Port_Base+CR_R) 	 = 0xFF; 
 		
 		// PCTL ,DIR , AFSEL ,DEN :
 		if ( Port_Base == Port_A ){
+			
 			//Port Control
-		SET_BIT ((Port_Base+PCTL_R) , GPIO_PCTL_PA0_CAN1RX); // PMC0 control CAN1RX
-		SET_BIT ((Port_Base+PCTL_R) , GPIO_PCTL_PA1_CAN1TX); // PMC1 control CAN1TX
+		ACCESS_REG(Port_Base+PCTL_R) &= ~(0xFF);
+		ACCESS_REG(Port_Base+PCTL_R) |= GPIO_PCTL_PA0_CAN1RX; // PMC0 control CAN1RX
+		ACCESS_REG(Port_Base+PCTL_R) |= GPIO_PCTL_PA1_CAN1TX; // PMC1 control CAN1TX
 			//Direction Bit :
 		CLEAR_BIT((Port_Base+DIR_R) ,	(1<<BIT0)); // RX >> Input 
 		SET_BIT ((Port_Base+DIR_R)  ,	(1<<BIT1)); // TX >> Output
@@ -36,9 +30,15 @@ void GPIO_Init (Port_Name Port_Base){
 		SET_BIT ((Port_Base+DEN_R),	(1<<BIT1)); // Enable Digital Pin1
 			
 	}else if ((Port_Base == Port_B) || (Port_Base == Port_E)){
+		
+		ACCESS_REG(Port_Base+PCTL_R) &= ~(0xFF0000);
+		//Disable Analog Mode :
+		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT4));
+		CLEAR_BIT ((Port_Base+AMSEL_R),(1<<BIT5));
+		
 		//Port Control :
-		SET_BIT ((Port_Base+PCTL_R) , GPIO_PCTL_PB4_CAN0RX); // PMC4 control CAN0RX
-		SET_BIT ((Port_Base+PCTL_R) , GPIO_PCTL_PB5_CAN0TX); // PMC5 control CAN0TX
+		ACCESS_REG(Port_Base+PCTL_R) |= GPIO_PCTL_PB4_CAN0RX; // PMC4 control CAN0RX
+		ACCESS_REG(Port_Base+PCTL_R) |= GPIO_PCTL_PB5_CAN0TX; // PMC5 control CAN0TX
 		//Direction Bit :
 		CLEAR_BIT((Port_Base+DIR_R) ,	(1<<BIT4)); // RX >> Input 
 		SET_BIT ((Port_Base+DIR_R)  ,	(1<<BIT5)); // TX >> Output
@@ -52,8 +52,9 @@ void GPIO_Init (Port_Name Port_Base){
 		
 	}else { // Port_F
 		//Port Control :
-		SET_BIT ((Port_Base+PCTL_R) , GPIO_PCTL_PF0_CAN0RX); // PMC0 control CAN0RX
-		SET_BIT ((Port_Base+PCTL_R) , GPIO_PCTL_PF3_CAN0TX);// PMC3 control CAN0TX
+		ACCESS_REG(Port_Base+PCTL_R) &= ~(0xF00F);
+		ACCESS_REG(Port_Base+PCTL_R) |= GPIO_PCTL_PF0_CAN0RX; // PMC0 control CAN0RX
+		ACCESS_REG(Port_Base+PCTL_R) |= GPIO_PCTL_PF3_CAN0TX;// PMC3 control CAN0TX
 		//Direction Bit :
 		CLEAR_BIT((Port_Base+DIR_R),	(1<<BIT0)); // RX >> Input 
 		SET_BIT ((Port_Base+DIR_R) ,	(1<<BIT3)); // TX >> Output
@@ -74,9 +75,9 @@ void CANInit(CAN_Base Base,uint8_t Mode){
 	
 	if(Base == CAN0_BASE){		
 		//Enable Clock :
-		SET_BIT(SYSCTL_RCGC0_R , SYSCTL_RCGC0_CAN0 ) ;				 // Clock For CAN0	
+		SET_BIT(SYSCTL_RCGC0 , SYSCTL_RCGC0_CAN0 ) ;				 // Clock For CAN0	
 	}else{
-		SET_BIT(SYSCTL_RCGC0_R , SYSCTL_RCGC0_CAN1 ) ;  			 // Clock For CAN1
+		SET_BIT(SYSCTL_RCGC0 , SYSCTL_RCGC0_CAN1 ) ;  			 // Clock For CAN1
 	 
 	}
 	
@@ -100,25 +101,18 @@ void CANInit(CAN_Base Base,uint8_t Mode){
 /*********************************************************************************************************/
 
 
-void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms , uint32_t SourceClock , uint32_t BitRate){
+void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms){
 
-	uint32_t Bit_Time ;
-	uint32_t TQ ;
-	uint32_t prescaler;
-	
-	Bit_Time = 1/BitRate ; 
-	TQ = Bit_Time / psClkParms -> ui32Quantum_num ;
-	prescaler = SourceClock *TQ ;
 
 			//Enable Access CANBIT
 	SET_BIT((Base+CAN_CTL_R) , CAN_CTL_CCE) ; 
 	
 	ACCESS_REG((Base+CAN_BIT_R))&= ~(0xFFFF);
 
-	ACCESS_REG((Base+CAN_BIT_R))|= (CAN_BIT_BRP_M   & prescaler -1); //BRP_SEG SET 
-	ACCESS_REG((Base+CAN_BIT_R))|= (CAN_BIT_TSEG2_M & psClkParms -> ui32Phase2Seg-1 ); //Phase2_SEG SET 
-	ACCESS_REG((Base+CAN_BIT_R))|= (CAN_BIT_TSEG1_M &	psClkParms -> ui32SyncPropPhase1Seg-1); //Prop_SEG + Phase1_SEG SET 
-	ACCESS_REG((Base+CAN_BIT_R))|= (CAN_BIT_SJW_M   & psClkParms -> ui32SJW-1 ); //SJW_SEG SET 
+	ACCESS_REG((Base+CAN_BIT_R))|= (psClkParms->prescaler -1); //BRP_SEG SET 
+	ACCESS_REG((Base+CAN_BIT_R))|= ((psClkParms -> ui32SJW-1) << 6); //Phase2_SEG SET 
+	ACCESS_REG((Base+CAN_BIT_R))|= ((psClkParms -> ui32SyncPropPhase1Seg-1) << 8); //Prop_SEG + Phase1_SEG SET 
+	ACCESS_REG((Base+CAN_BIT_R))|= ((psClkParms -> ui32Phase2Seg-1) << 12); //SJW_SEG SET 
 	
 		//Disable Access CANBIT
 	CLEAR_BIT((Base+CAN_CTL_R) , CAN_CTL_CCE) ; 
@@ -223,6 +217,7 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 		if(Frame_Type == STANDARD_FRAME){
 			
 			CLEAR_BIT((Base + CAN_IF1ARB2_R), CAN_IF1ARB2_XTD);
+			CLEAR_BIT((Base + CAN_IF1MSK2_R), CAN_IF1MSK2_MXTD);
 			
 			ACCESS_REG(Base + CAN_IF1ARB2_R) &= ~(0x1FFF);								 // First clear ARB2 Field
 			ACCESS_REG(Base + CAN_IF1ARB2_R) |= ((MsgObject->Msg_ID) << 2);	// Write the message ID
@@ -233,7 +228,8 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 		 else if (Frame_Type == EXTENDED_FRAME){
 			
 			SET_BIT((Base + CAN_IF1ARB2_R), CAN_IF1ARB2_XTD);
-			 
+			CLEAR_BIT((Base + CAN_IF2MSK2_R), CAN_IF2MSK2_MXTD);
+			
 			ACCESS_REG(Base + CAN_IF1ARB1_R) &= ~(0xFFFF);													      // First clear ARB1 Field
 			ACCESS_REG(Base + CAN_IF1ARB1_R) |= (MsgObject->Msg_ID & 0x0000FFFF);		      // Write first part of ID
 			
@@ -258,21 +254,6 @@ void CANTransmitMessageSet (CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *M
 
 		ACCESS_REG((Base + CAN_IF1MCTL_R)) &= ~(0xF);			            //First clear DLC Field
 		ACCESS_REG((Base + CAN_IF1MCTL_R)) |= MsgObject->Msg_Length;	// Write the message length code
-
-		/*	
-		// Data
-		ACCESS_REG((Base + CAN_IF1DA1_R)) |= (MsgObject -> Msg_Data[0]);
-		ACCESS_REG((Base + CAN_IF1DA1_R)) |= ((MsgObject -> Msg_Data[1]) << 8);
-
-		ACCESS_REG((Base + CAN_IF1DA2_R)) |= (MsgObject -> Msg_Data[2]);
-		ACCESS_REG((Base + CAN_IF1DA2_R)) |= ((MsgObject -> Msg_Data[3]) << 8);
-
-		ACCESS_REG((Base + CAN_IF1DB1_R)) |= (MsgObject -> Msg_Data[4]);
-		ACCESS_REG((Base + CAN_IF1DB1_R)) |= ((MsgObject -> Msg_Data[5]) << 8);
-
-		ACCESS_REG((Base + CAN_IF1DB2_R)) |= (MsgObject -> Msg_Data[6]);
-		ACCESS_REG((Base + CAN_IF1DB2_R)) |= ((MsgObject -> Msg_Data[7]) << 8);
-		*/
 
 		ACCESS_REG((Base + CAN_IF1CRQ_R)) = ObjID;				// Write Message number into MNUM field to start transfer
 	
@@ -378,10 +359,11 @@ void CANMessageGet (CAN_Base Base, MsgObjID ObjID, tCANReadRXData *psMsgObject, 
 
 		CLEAR_BIT((Base + CAN_IF2CMSK_R), CAN_IF2CMSK_WRNRD);		// clear WRNRD bit = 0
 		ACCESS_REG((Base + CAN_IF2CRQ_R)) = ObjID;							// Set the MNUM field to the Message object ID
-	
+		//while(BIT_IS_SET((Base+ CAN_IF2MCTL_R), CAN_IF2MCTL_NEWDAT)){}
+		
 		// Reading data and store it into the message objsct data field
 		psMsgObject->Msg_Data[0] = (ACCESS_REG((Base + CAN_IF2DA1_R)) & 0x000000FF);
-		psMsgObject->Msg_Data[1] = ((ACCESS_REG((Base + CAN_IF2DA1_R)) & 0x0000FF00) >> 8);
+		psMsgObject->Msg_Data[1] = ((ACCESS_REG((Base + CAN_IF2DA1_R)) &0x0000FF00) >> 8);
 	
 		psMsgObject->Msg_Data[2] = (ACCESS_REG((Base + CAN_IF2DA2_R)) & 0x000000FF);
 		psMsgObject->Msg_Data[3] = ((ACCESS_REG((Base + CAN_IF2DA2_R)) & 0x0000FF00) >> 8);
@@ -479,8 +461,12 @@ uint32_t CANStatusGet (CAN_Base Base, tCANStsReg eStatusReg){
 
 
 void CAN_Write(CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *MsgObject){
+		
+		CLEAR_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_WRNRD);		 // Set WRNRD bit = 0
+		ACCESS_REG((Base + CAN_IF1CRQ_R)) = ObjID;
 	
 		SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_WRNRD);		 // Set WRNRD bit = 1
+		SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_CONTROL);
 		SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_DATAA);		 // Access Data Bytes 0 to 3
 		SET_BIT((Base + CAN_IF1CMSK_R), CAN_IF1CMSK_DATAB);		 // Access Data Bytes 4 to 7
 	
@@ -488,20 +474,22 @@ void CAN_Write(CAN_Base Base, MsgObjID ObjID, tCANConfigTXMsgObj *MsgObject){
 		ACCESS_REG((Base + CAN_IF1MCTL_R)) |= MsgObject->Msg_Length;	// Write the message length code
 
 		// Data
-		ACCESS_REG((Base + CAN_IF1DA1_R)) |= (MsgObject -> Msg_Data[0]);
+		ACCESS_REG((Base + CAN_IF1DA1_R)) = (MsgObject -> Msg_Data[0]);
 		ACCESS_REG((Base + CAN_IF1DA1_R)) |= ((MsgObject -> Msg_Data[1]) << 8);
 
-		ACCESS_REG((Base + CAN_IF1DA2_R)) |= (MsgObject -> Msg_Data[2]);
+		ACCESS_REG((Base + CAN_IF1DA2_R)) = (MsgObject -> Msg_Data[2]);
 		ACCESS_REG((Base + CAN_IF1DA2_R)) |= ((MsgObject -> Msg_Data[3]) << 8);
 
-		ACCESS_REG((Base + CAN_IF1DB1_R)) |= (MsgObject -> Msg_Data[4]);
+		ACCESS_REG((Base + CAN_IF1DB1_R)) = (MsgObject -> Msg_Data[4]);
 		ACCESS_REG((Base + CAN_IF1DB1_R)) |= ((MsgObject -> Msg_Data[5]) << 8);
 
-		ACCESS_REG((Base + CAN_IF1DB2_R)) |= (MsgObject -> Msg_Data[6]);
+		ACCESS_REG((Base + CAN_IF1DB2_R)) = (MsgObject -> Msg_Data[6]);
 		ACCESS_REG((Base + CAN_IF1DB2_R)) |= ((MsgObject -> Msg_Data[7]) << 8);
 
-		// Request transmission of this message object
-		SET_BIT((CAN0_BASE + CAN_IF1MCTL_R), CAN_IF1MCTL_TXRQST);
+		// Request transmission of this message object and Set the NEWDATA Bit
+		// Look up datasheet page 17.3.5
+		ACCESS_REG( (CAN0_BASE + CAN_IF1MCTL_R) ) |= (CAN_IF1MCTL_TXRQST | CAN_IF1MCTL_NEWDAT);
+		
 		// Write Message number into MNUM field to start transfer
 		ACCESS_REG((Base + CAN_IF1CRQ_R)) = ObjID;				
 

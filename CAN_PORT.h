@@ -11,6 +11,7 @@ typedef enum{
 
 
 
+#define SYSCTL_RCGC2 	0x400FE108
 
 #define CR_R				0x524 
 

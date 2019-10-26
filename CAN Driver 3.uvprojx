@@ -10,7 +10,7 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060300::V5.06 update 3 (build 300)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -393,11 +393,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>can_driver.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\can_driver.h</FilePath>
-            </File>
-            <File>
               <FileName>CAN_HW_TYPES.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\CAN_HW_TYPES.h</FilePath>
@@ -416,6 +411,11 @@
               <FileName>tm4c123gh6pm.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\tm4c123gh6pm.h</FilePath>
+            </File>
+            <File>
+              <FileName>can_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\can_driver.h</FilePath>
             </File>
           </Files>
         </Group>

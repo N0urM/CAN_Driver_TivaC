@@ -1,89 +1,95 @@
 #include "can_driver.h"
 
+// TX --> PB5
+// RX --> PB4
+
 void EnableInterrupts(void);
 void CAN0_Handler(void);
-void Test_Yomna(void);
-void CAN_Cnfg_TX_Msg(CAN_Base Base ,MsgObjID ObjID, uint32_t msg_ID, tCAN_MSG_LENGTH msg_Length, uint8_t *msg_Data, uint32_t flags);
-void CAN_Cnfg_RX_Msg(CAN_Base Base , MsgObjID ObjID, uint32_t msg_ID, uint32_t msg_ID_MSK, uint32_t flags);
+void Test_Nada(void);
 
-uint8_t dataT[8] = "Helloooo";
-uint8_t dataR[8];
+
+uint8_t dataT[6] = 	{0x11, 0x22, 0x33, 0x44, 0x44, 0x44};
+uint8_t dataT2[6] = {0x88, 0x88, 0x88, 0x88, 0x88, 0x88};
+
 tCANReadRXData ReceivedData;
-tCANReadRXData* PReceivedData = &ReceivedData;
+tCANReadRXData ReceivedData2;
 
 int main(){
 		
-		ReceivedData.Msg_Data = dataR;
-		uint32_t IntEnableFlags = CAN_INT_MASTER | CAN_INT_STATUS;
-		
-		GPIO_Init(Port_B);
+		// Initialization
+		Test_Nada();
+		//GPIO_Init(Port_B)
 		CANInit(CAN0_BASE, Real_Mode);
+	
+		// Clock Initialization
+		tCANBitClkParms BitTime = {5, 2, 2, 4};
+		CANBitTimingSet(CAN0_BASE, &BitTime);		// 0x1443
+		
+		// Interrupt enable
+		uint32_t IntEnableFlags = CAN_INT_MASTER | CAN_INT_STATUS;
 		CANIntEnable(CAN0_BASE, IntEnableFlags);
 		
 	
 		//Configuration of TX Message Object1
-		//CAN_Cnfg_TX_Msg(CAN0_BASE, MsgObj1, 0x12, EIGHT_BYTE, dataT, MSG_OBJ_TX_INT_ENABLE);
+		tCANConfigTXMsgObj msgT = {0x8, 0, SIX_BYTE, dataT};
+		CANTransmitMessageSet(CAN0_BASE, MsgObj1, &msgT);
 		
-		//Configuration of RX Message Object2
-		CAN_Cnfg_RX_Msg(CAN0_BASE, MsgObj2, 0x12, 0x0, 0);
+		//Configuration of TX Message Object2
+		tCANConfigTXMsgObj msgT2 = {0x4, 0, SIX_BYTE, dataT2};
+		CANTransmitMessageSet(CAN0_BASE, MsgObj2, &msgT2);
 		
-	
-		//BIT RATE :
-		CAN0_CTL_R |= 0x40;									  //Write accesses to the CANBIT register are allowed
-		CAN0_BIT_R = 0x1443;								  //  calculate BaudRate
-	  CAN0_CTL_R &=~ 0x40;		
+		//Configuration of RX Message Object3
+		tCANConfigRXMsgObj msgR = {0x2, 0x7FF, (MSG_OBJ_RX_INT_ENABLE | MSG_OBJ_USE_ID_FILTER)};
+		CANReceiveMessageSet(CAN0_BASE, MsgObj3, &msgR);
 		
+		//Configuration of RX Message Object4
+		tCANConfigRXMsgObj msgR2 = {0x1, 0x7FF, (MSG_OBJ_RX_INT_ENABLE | MSG_OBJ_USE_ID_FILTER)};
+		CANReceiveMessageSet(CAN0_BASE, MsgObj4, &msgR2);
+		
+
 		CANEnable(CAN0_BASE);
-		//CAN_Write(CAN0_BASE, MsgObj1, PMsgObjT);
+		
+
 		
 	while (1)
 	{
-		
+			CAN_Write(CAN0_BASE, MsgObj1, &msgT);
+			for(int i = 0; i<100000000; i++){}
+			CAN_Write(CAN0_BASE, MsgObj2, &msgT2);
+			for(int i = 0; i<100000000; i++){}
 	}	
 
 }
 
-void CAN_Cnfg_TX_Msg(CAN_Base Base ,MsgObjID ObjID, uint32_t msg_ID, tCAN_MSG_LENGTH msg_Length, uint8_t *msg_Data, uint32_t flags){
 
-		tCANConfigTXMsgObj msgT;
-		tCANConfigTXMsgObj* PMsgObjT = &msgT;
-		
-		msgT.Msg_ID = msg_ID;
-		msgT.Msg_Length = msg_Length;
-		msgT.Msg_Data = msg_Data;
-		msgT.Flags = flags;
-		
-		CANTransmitMessageSet(Base, ObjID, PMsgObjT);
-	
-}
-
-
-void CAN_Cnfg_RX_Msg(CAN_Base Base , MsgObjID ObjID, uint32_t msg_ID, uint32_t msg_ID_MSK, uint32_t flags){
-
-		tCANConfigRXMsgObj msgR;
-		tCANConfigRXMsgObj* PMsgObjR = &msgR;
-		
-		msgR.Msg_ID = msg_ID;
-		msgR.Msg_ID_MSK = msg_ID_MSK;
-		msgR.Flags = flags;
-		
-		CANReceiveMessageSet(Base, ObjID, PMsgObjR);
-
-}
 
 void CAN0_Handler(void)
 {
-		if(CAN0_MSG1INT_R == 0x2){
+		if(BIT_IS_SET((CAN0_BASE + CAN_MSG1INT_R), 1 << (MsgObj3-1))){
 				CAN0_IF2CMSK_R = 0x007F;
-				CAN0_IF2CRQ_R = 0x02;						// Message number
-				CANMessageGet(CAN0_BASE, MsgObj2, PReceivedData, TRUE);
-				//CAN0_IF2MCTL_R &= ~(1<<13);
+				CANMessageGet(CAN0_BASE, MsgObj3, &ReceivedData2, TRUE);
+				CLEAR_BIT((CAN0_BASE + CAN_STS_R), CAN_STS_RXOK);
+		}
+		
+		if(BIT_IS_SET((CAN0_BASE + CAN_MSG1INT_R), 1 << (MsgObj4-1))){
+				CAN0_IF2CMSK_R = 0x007F;
+				CANMessageGet(CAN0_BASE, MsgObj4, &ReceivedData, TRUE);
+				CLEAR_BIT((CAN0_BASE + CAN_STS_R), CAN_STS_RXOK);
 		}
 
+		
+		if(BIT_IS_SET((CAN0_BASE + CAN_MSG1INT_R), 1 << (MsgObj1-1))){
+				CLEAR_BIT((CAN0_BASE + CAN_IF1MCTL_R), CAN_IF1MCTL_INTPND);
+				CLEAR_BIT((CAN0_BASE + CAN_STS_R), CAN_STS_TXOK);
+		}
+		 if(BIT_IS_SET((CAN0_BASE + CAN_MSG1INT_R), 1 << (MsgObj2-1))){
+				CLEAR_BIT((CAN0_BASE + CAN_IF1MCTL_R), CAN_IF1MCTL_INTPND);
+				CLEAR_BIT((CAN0_BASE + CAN_STS_R), CAN_STS_TXOK);
+		}
 }
 
 
-void Test_Yomna(void){
+void Test_Nada(void){
 
 		SYSCTL_RCGC0_R |= (1<<24);  		// enable CAN module0 clock
 		SYSCTL_RCGC2_R |= (1<<1);				// enable GPIO PortF Clock
@@ -99,12 +105,6 @@ void Test_Yomna(void){
 	  GPIO_PORTB_PCTL_R &=~ 0xFF0000;	
 		GPIO_PORTB_PCTL_R |= 0x80000;				// Set PMC0 field for PB4
 		GPIO_PORTB_PCTL_R |= 0x800000;		// Set PMC3 field for PB5
-	
-		NVIC_EN1_R |= (1<<7);					// enable CAN0 interrupts
-	
-		CAN0_CTL_R |= CAN_CTL_INIT;							 // Set INIT bit in CAN0_CTL Register to enter initialization mode
-		CAN0_CTL_R |= (1<<1);										 // Enable interrupts
-		CAN0_CTL_R |= (1<<2);										 // Enable interrupt when a message has been transmitted or received
 	
 }
 

@@ -6,6 +6,7 @@
 
 #define CAN_MAX_STANDARD_ID		0x7FF
 #define	CAN_MAX_EXTENDED_ID		0x1FFFFFFF
+#define CAN_MAX_DATA_LENGTH		8
 
 
 
@@ -80,7 +81,7 @@ typedef struct {
 	uint32_t ui32SyncPropPhase1Seg;
 	uint32_t ui32Phase2Seg;
 	uint32_t ui32SJW;
-	uint32_t ui32Quantum_num ;
+	uint32_t prescaler ;
 }tCANBitClkParms;
 
 typedef struct {
@@ -98,8 +99,6 @@ typedef struct {
 	uint32_t Msg_ID;
 	uint32_t Msg_ID_MSK;
 	uint32_t Flags;
-	tCAN_MSG_LENGTH Msg_Length;
-	uint8_t *Msg_Data;		// Array
 	
 }tCANConfigRXMsgObj;
 
@@ -107,7 +106,7 @@ typedef struct {
 typedef struct {
 	
 	tCAN_MSG_LENGTH Msg_Length;
-	uint8_t *Msg_Data;		// Array
+	uint8_t Msg_Data[CAN_MAX_DATA_LENGTH];		// Array
 	
 }tCANReadRXData;
 
@@ -156,7 +155,7 @@ typedef enum {
 /* Prototypes*/
 
 void GPIO_Init (Port_Name Port_Base);
-void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms , uint32_t SourceClock , uint32_t BitRate);
+void CANBitTimingSet (CAN_Base Base, tCANBitClkParms *psClkParms);
 void CANDisable (CAN_Base Base);
 void CANEnable (CAN_Base Base);
 bool_t CANErrCntrGet (uint32_t ui32Base, uint32_t pui32RxCount, uint32_t pui32TxCount);

@@ -183,8 +183,8 @@ uint32_t CANIntStatus (CAN_Base Base, tCANIntStsReg eIntStsReg){
     if (eIntStsReg == CAN_INT_STS_CAUSE){
         return_val = READ_REG( (Base + CAN_INT_R) );
     }else {
-        return_val  =  READ_REG (Base+CAN_MSG1INT_R) & 0x00ff;  // not sure if it's 0x00ff or 0xff00 masking INTPND bits
-        return_val |= (READ_REG(Base+CAN_MSG2INT_R) <<16 );
+        return_val  =  READ_REG (Base+CAN_MSG1INT_R) & 0xFFFF;  // not sure if it's 0x00ff or 0xff00 masking INTPND bits
+        return_val |= ((READ_REG(Base+CAN_MSG2INT_R) & 0xFFFF) <<16 );
     }
     return return_val;
 }
